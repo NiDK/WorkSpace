@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwC.C4.Metadata", "Metadata\PwC.C4.Metadata\PwC.C4.Metadata.csproj", "{5D05594D-EB47-4677-8F77-3FFCF217B09F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwC.C4.Metadata.Storage", "Metadata\PwC.C4.Metadata.Storage\PwC.C4.Metadata.Storage.csproj", "{2CDDC8B1-208B-418C-9CC4-92228CA94633}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwC.C4.TemplateEngine", "Metadata\PwC.C4.TemplateEngine\PwC.C4.TemplateEngine.csproj", "{3A0ADA25-F094-45BD-882D-C65A1475349E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwC.C4.Metadata.Search", "Metadata\PwC.C4.Metadata.Search\PwC.C4.Metadata.Search.csproj", "{399ABBA0-CDF3-4B13-B30C-2D228E958996}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Nuget|Any CPU = Nuget|Any CPU
+		Release|Any CPU = Release|Any CPU
+		UAT|Any CPU = UAT|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.Nuget|Any CPU.ActiveCfg = Nuget|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.Nuget|Any CPU.Build.0 = Nuget|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.UAT|Any CPU.ActiveCfg = Release|Any CPU
+		{5D05594D-EB47-4677-8F77-3FFCF217B09F}.UAT|Any CPU.Build.0 = Release|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.UAT|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDDC8B1-208B-418C-9CC4-92228CA94633}.UAT|Any CPU.Build.0 = Release|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.Nuget|Any CPU.ActiveCfg = Nuget|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.Nuget|Any CPU.Build.0 = Nuget|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.UAT|Any CPU.ActiveCfg = UAT|Any CPU
+		{3A0ADA25-F094-45BD-882D-C65A1475349E}.UAT|Any CPU.Build.0 = UAT|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.UAT|Any CPU.ActiveCfg = Release|Any CPU
+		{399ABBA0-CDF3-4B13-B30C-2D228E958996}.UAT|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

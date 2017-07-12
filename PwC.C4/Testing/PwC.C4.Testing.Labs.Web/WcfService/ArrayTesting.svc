@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PwC.C4.Testing.Labs.Web.WcfService.ArrayTesting" CodeBehind="ArrayTesting.svc.cs" %>

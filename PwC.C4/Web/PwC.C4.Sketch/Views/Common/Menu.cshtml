@@ -1,0 +1,39 @@
+﻿@using PwC.C4.Infrastructure.Config
+@model IEnumerable<ApplicationCenter.Model.vwMenuRole>
+@{
+	Layout = null;
+}
+
+<div class="navigation">
+    <ul>
+        @foreach (var menu in Model.Where(m => !m.ParentMenuID.HasValue || m.ParentMenuID.ToString() == "00000000-0000-0000-0000-000000000000"))
+        {
+            var currentSytle = "";
+            if (menu.MenuName == ViewBag.Menu)
+            {
+                currentSytle = "active";
+            }
+            <li class="nav0 @currentSytle">
+                <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@menu.MenuURL">@menu.MenuName</a>
+                @{
+                    var subs = Model.Where(m => m.ParentMenuID.HasValue && m.ParentMenuID.ToString() != "00000000-0000-0000-0000-000000000000");
+                    if (subs.Any())
+                    {
+                        <ul>
+                            @foreach (var sub in subs)
+                            {
+                                if (menu.MenuID == sub.ParentMenuID.Value)
+                                {
+                                    <li class="nav0">
+                                        <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@sub.MenuURL">@sub.MenuName</a>
+                                    </li>}
+                            }
+                        </ul>
+                    }
+                }
+
+            </li>}
+
+    </ul>
+    <div class="navspace"></div>
+</div>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Source Code\Publish\PwC.C4.DataService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/16/2015 03:55:43</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>12/16/2015 03:55:50</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>12/16/2015 03:55:50</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Configuration.dll">
+      <publishTime>05/28/2016 16:18:05</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Configuration.pdb">
+      <publishTime>05/28/2016 16:18:05</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.DataService.dll">
+      <publishTime>05/28/2016 16:18:15</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.DataService.pdb">
+      <publishTime>05/28/2016 16:18:15</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.dll">
+      <publishTime>05/28/2016 16:18:01</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.pdb">
+      <publishTime>05/28/2016 16:18:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/30/2016 21:08:39</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/30/2016 21:08:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/30/2016 21:08:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>03/30/2016 21:08:39</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>03/30/2016 21:08:39</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>03/30/2016 21:08:39</publishTime>
+    </File>
+    <File Include="bin/Wintellect.PowerThreading.dll">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="C4CacheService.svc">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="C4CommonService.svc">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="C4DataService.svc">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="C4DfsService.svc">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="C4LogService.svc">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="InfrastructureService.svc">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/26/2016 12:18:41</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/28/2016 16:35:34</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,824 @@
+﻿
+@{
+    ViewBag.Title = "FormDesign";
+    Layout = "~/Views/Shared/_LayoutWithoutMenu.cshtml";
+}
+
+@section styles
+{
+    <link href="~/Content/easyui.css" rel="stylesheet"/>
+    <link href="~/Content/icon.css" rel="stylesheet"/>
+    <style>
+        h3 {
+            font-size: 24px;
+            color: #602320;
+            padding-bottom: 10px;
+            border-bottom-color: #eb8c00;
+            border-bottom-width: 1px;
+            border-bottom-style: dotted;
+        }
+        .tempDiv {
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px 10px 30px 10px;
+            border-top: 0px;
+            min-height: 600px;
+        }
+        .designToolMenu {
+            margin-top: 5px;
+        }
+        .bt-panelClose {
+            margin-left: 5px;
+        }
+
+        * {margin: 0;padding: 0;list-style-type: none;}
+        a, img { border: 0; }
+
+        .overlay {top: 0;left: 0;position: fixed;z-index: 998;width: 100%;height: 100%;background: #f6f4f5;display:none;}
+        .showbox {position: fixed;left: 50%;z-index: 9999;opacity: 0;filter: alpha(opacity=0);margin-left: -80px;}
+        #AjaxLoading {border: 1px solid #8CBEDA;color: #37a;font-size: 12px;font-weight: bold;}
+        #AjaxLoading div.loadingWord {width: 180px;height: 50px;line-height: 50px;background: #fff;}
+        #AjaxLoading img {margin: 10px 15px;float: left;display: inline;}
+
+    </style>
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <script src="~/Scripts/jquery.autoheight.js"></script>
+    <script>
+        var jsonDiv = {};
+        var levelDiv = {};
+        $(function() {
+            var menu = $(".designToolMenu").prop('outerHTML');
+            var sectionTemp = "<div class=\"bt-panel bt-panel-default\">" +
+                "<div class=\"bt-panel-heading\">" +
+                "<strong>Section：</strong>&nbsp;&nbsp;&nbsp;<span class=\"ContentHtmlInfo\">{placeholder}</span>" +
+                "<button type=\"button\" class=\"close bt-panelClose\" control=\"section\">" +
+                "<span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span><span class=\"sr-only\">Remove</span></button>" +
+                "<button type=\"button\" class=\"close bt-panelEdit\" >" +
+                "<input type=\"hidden\" class=\"settingJson\" value=\"{jsonId}\"/>" +
+                "<span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\"></span><span class=\"sr-only\">Edit</span></button></div>" +
+                "<div class=\"bt-panel-body\" level=\"{level}\">" + menu + "</div></div>";
+            var controlTemp = "<div class=\"bt-panel bt-panel-default\">" +
+                "<div class=\"bt-panel-body\" level=\"{level}\">" +
+                "<strong>{type}：</strong>&nbsp;&nbsp;&nbsp;<span class=\"ContentHtmlInfo\">{placeholder}</span>" +
+                "<button type=\"button\" class=\"close bt-panelClose\"  control=\"control\">" +
+                "<span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span><span class=\"sr-only\">Remove</span></button>" +
+                "<button type=\"button\" class=\"close bt-panelEdit\" >" +
+                "<span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\"></span><span class=\"sr-only\">Edit</span></button><input type=\"hidden\" class=\"settingJson\" value=\"{jsonId}\"/></div>" +
+                "</div></div>";
+            var lineTemp = "<div class=\"bt-panel bt-panel-default\">" +
+                "<div class=\"bt-panel-body\">Line：</strong>&nbsp;&nbsp;&nbsp;<hr />" +
+                "<button type=\"button\" class=\"close bt-panelClose\" control=\"line\" >" +
+                "<span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span><span class=\"sr-only\">Close</span></button></div>" +
+                "</div></div>";
+            var upBtnTemp = "<button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\"><span class=\"glyphicon glyphicon-circle-arrow-up\" aria-hidden=\"true\"></span></button>";
+            var downBtnTemp = "<button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\"><span class=\"glyphicon glyphicon-circle-arrow-up\" aria-hidden=\"true\"></span></button>";
+            var currentScope;
+            var currentLevel;
+            var currentContentHtml;
+            var jsonChanged4Temp = false;
+            var jsonChanged4Prev = false;
+            var stylesChanged = false;
+            var javascriptsChanged = false;
+            var json = [];
+            var aliasName;
+            var currentPrevId;
+            showLoading("Data Loading...");
+            $.get("@Url.Action("GetFormBaseInfo")?formId=@ViewBag.FormId", function(resp) {
+                aliasName = resp.AliasName;
+                $("#jsSettings").val(resp.JavaScript);
+                $("#styleSettings").val(resp.Styles);
+                $("#formName").html(resp.FormName + "&nbsp;&nbsp;<small>form design</small>");
+                if (resp.Structure !== '') {
+                    currentScope = $("#initMenu");
+                    var jsonInit = $.parseJSON(resp.Structure);
+                    if (jsonInit.length > 0) {
+                        renderTemplate(jsonInit);
+                    }
+                }
+                closeLoading();
+                bindingEvents();
+            });
+
+            $("#jsonSettings").change(function() {
+                var newJson = $("#jsonSettings").val();
+                json = $.parseJSON(newJson);
+                jsonChanged4Temp = true;
+                jsonChanged4Prev = true;
+            });
+
+            $("#jsSettings").change(function() {
+                stylesChanged = true;
+            });
+
+            $("#styleSettings").change(function() {
+                javascriptsChanged = true;
+            });
+
+            $(".tempTabBtn").click(function() {
+                if (jsonChanged4Temp) {
+                    showLoading("Page rendering...");
+                    var newJson = $("#jsonSettings").val();
+                    var jsonInit = $.parseJSON(newJson);
+                    currentScope = $("#initMenu");
+                    currentScope.siblings().remove();
+                    renderTemplate(jsonInit);
+                    closeLoading();
+                    jsonChanged4Temp = false;
+                }
+            });
+
+            $(".PrevTabBtn").click(function() {
+                if (jsonChanged4Prev || stylesChanged || javascriptsChanged) {
+                    showLoading("Page rendering...");
+                    var newJson = $("#jsonSettings").val();
+                    var jsonForPrew = $.parseJSON(newJson);
+                    var propsForPrew = getFieldNames(jsonForPrew);
+                    $.post("@Url.Action("BuildPreview")", {
+                        formControls: jsonForPrew,
+                        javascript: $("#jsSettings").val(),
+                        styles: $("#styleSettings").val(),
+                        props: propsForPrew.join(",")
+                    }, function(resp) {
+                        if (resp !== "") {
+                            currentPrevId = resp;
+                            var url = "@Url.Action("PreviewForm")?aliasName=" + aliasName + "&previewId=" + resp + "&dataId=PreviewData";
+                            $("#previewIframe").attr("src", url);
+                            closeLoading();
+                        }
+                    });
+                    jsonChanged4Prev = false;
+                    stylesChanged = false;
+                    javascriptsChanged = false;
+                }
+            });
+
+            $(".prevRefreshDataId").click(function() {
+                var dataId = $("#dataId").val();
+                if (dataId === "") {
+                    dataId = "PreviewData";
+                }
+                var url = "@Url.Action("PreviewForm")?aliasName=" + aliasName + "&previewId=" + currentPrevId + "&dataId=" + dataId;
+                $("#previewIframe").attr("src", url);
+            });
+
+            $(".prevFullscreen").click(function() {
+                var dataId = $("#dataId").val();
+                if (dataId === "") {
+                    dataId = "PreviewData";
+                }
+                var url = "@Url.Action("PreviewForm")?aliasName=" + aliasName + "&previewId=" + currentPrevId + "&dataId=" + dataId;
+                window.open(url);
+                return;
+            });
+
+            $(".saveForm").click(function() {
+                showLoading("Form structure saving...");
+                var fields = getFieldNames(json);
+                $.post("@Url.Action("SaveFormStructure")",
+                    {
+                        formId: '@ViewBag.FormId',
+                        props: fields,
+                        formControls: json,
+                        javascript: $("#jsSettings").val(),
+                        styles: $("#styleSettings").val()
+                    },
+                    function(resp) {
+                        if (resp) {
+                            $.messager.alert('Form design', 'Form structure has been saved successfully!', 'info');
+                        } else {
+                            $.messager.alert('Form design', 'System error,form structure unsaved!', 'error');
+                        }
+                        closeLoading();
+                    });
+            });
+            $(".backToList").click(function() {
+                $.messager.confirm('Warming!', 'Do you want to close this page and discard changes?', function(r) {
+                    if (r) {
+                        window.close();
+                    }
+                });
+                return;
+            });
+
+            $("body").on("click", ".closeBtn", function() {
+                var t = $(this).attr("t");
+                if (t === "section") {
+                    $("#sectionForm").window("close");
+                } else if (t === "field") {
+                    $("#fieldForm").window("close");
+                } else {
+                    $("#htmlForm").window("close");
+                }
+            });
+
+            function renderTemplate(controls) {
+                var length = controls.length;
+                $.each(controls, function(i, v) {
+                    var isFirst = i === 0;
+                    var isLast = i === length - 1;
+                    if (v.ControlType === 0) { //Section
+                        var tempLevel = currentLevel;
+                        currentLevel = createSectionHtml(v.Label, v.Name, v.Parameters);
+                        if (v.SubFormDesgins != undefined && v.SubFormDesgins.length > 0) {
+                            var tempScorp = currentScope;
+                            currentScope = currentScope.prev().find(".designToolMenu");
+                            renderTemplate(v.SubFormDesgins);
+                            currentScope = tempScorp;
+                        }
+                        currentLevel = tempLevel;
+                    } else if (v.ControlType === 1) {
+                        createControlHtml(v.Label, v.Name, v.LabelTemplate, v.ValueTemplate, v.GridSystem, v.Parameters);
+                    } else if (v.ControlType === 2) {
+                        createHtml(v.Label, isFirst, isLast);
+                    } else {
+                        createLineHtml(isFirst, isLast);
+                    }
+                });
+            }
+
+            function getFieldNames(jsonData) {
+                var names = [];
+                $.each(jsonData, function(i, v) {
+                    if (v.ControlType === 1) {
+                        names.push(v.Name);
+                    } else if (v.ControlType === 0 && v.SubFormDesgins.length > 0) {
+                        var n1 = getFieldNames(v.SubFormDesgins);
+                        $.each(n1, function(i1, v1) {
+                            names.push(v1);
+                        });
+                    }
+                });
+                names.sort();
+                var re = [names[0]];
+                for (var i = 1; i < names.length; i++) {
+                    if (names[i] !== re[re.length - 1]) {
+                        re.push(names[i]);
+                    }
+                }
+                return re;
+            }
+
+            function showLoading(loadingMessage) {
+                $("#loadingMessage").html(loadingMessage);
+                $(".overlay").css({ 'display': 'block', 'opacity': '0.8' });
+                $(".showbox").stop(true).animate({ 'margin-top': '180px', 'opacity': '1' }, 100);
+                $(".showbox").css('display', 'block');
+            }
+
+            function closeLoading() {
+                $(".showbox").stop(true).animate({ 'margin-top': '250px', 'opacity': '0' }, 300);
+                $(".overlay").css({ 'display': 'none', 'opacity': '0' });
+                $(".showbox").css('display', 'none');
+
+            }
+
+            function htmlEncode(value) {
+                return $('<div/>').text(value).html();
+            }
+
+            function htmlDecode(value) {
+                return $('<div/>').html(value).text();
+            }
+
+            function s20() {
+                var data = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+                var result = "";
+                for (var i = 0; i < 20; i++) {
+                    var r = Math.floor(Math.random() * 62);
+                    result += data[r];
+                }
+                return result;
+            }
+
+            function createSectionHtml(sectionName, collStatus, collType) {
+                var rId = s20();
+                var level = getCurrentLevel();
+                var o = createControl(level, 0, sectionName, collStatus, '', '', '', collType);
+                var section = sectionTemp.replace("{placeholder}", sectionName);
+                section = section.replace("{level}", level.join(","));
+                section = section.replace("{jsonId}", rId);
+                jsonDiv[rId] = o;
+                levelDiv[rId] = level;
+                currentScope.before(section);
+                return level.join(",");
+            }
+
+
+            function createControlHtml(fieldLabel, fieldName, fieldLabelTemplate, fieldValueTemplate, gs, fieldParameters) {
+                var rId = s20();
+                var level = getCurrentLevel();
+                if (fieldLabel === null || fieldLabel === undefined) {
+                    fieldLabel = '';
+                }
+                var o = createControl(level, 1, fieldLabel, fieldName, fieldLabelTemplate, fieldValueTemplate, gs, fieldParameters);
+                var field = controlTemp.replace("{placeholder}", "{Label:<i>" + fieldLabel + "</i>}&nbsp;&nbsp;{Name:<i>" + fieldName + "</i>}");
+                field = field.replace("{type}", "Field");
+                field = field.replace("{jsonId}", rId);
+                field = field.replace("{level}", level.join(","));
+                jsonDiv[rId] = o;
+                levelDiv[rId] = level;
+                currentScope.before(field);
+                return;
+            }
+
+            function createLineHtml(isFirst, isLast) {
+                var level = getCurrentLevel();
+                createControl(level, 3);
+                currentScope.before(lineTemp);
+            }
+
+            function createHtml(htmlText, isFirst, isLast) {
+                var rId = s20();
+                var level = getCurrentLevel();
+                var o = createControl(level, 2, htmlText);
+                jsonDiv[rId] = o;
+                levelDiv[rId] = level;
+                var html = controlTemp.replace("{type}", "Html");
+                html = html.replace("{placeholder}", htmlText);
+                html = html.replace("{jsonId}", rId);
+                html = html.replace("{level}", level.join(","));
+                currentScope.before(html);
+            }
+
+            function updateControlHtml(controlType, fieldLabel, fieldName, fieldLabelTemplate, fieldValueTemplate, gs, fieldParameters, rId) {
+                var obj = jsonDiv[rId];
+                var level = levelDiv[rId];
+                createControl(level, controlType, fieldLabel, fieldName, fieldLabelTemplate, fieldValueTemplate, gs, fieldParameters, obj);
+                var replaceHtml = "";
+                if (controlType === 1) {
+                    if (fieldLabel === null || fieldLabel === undefined) {
+                        fieldLabel = '';
+                    }
+                    replaceHtml = "{Label:<i>" + fieldLabel + "</i>}&nbsp;&nbsp;{Name:<i>" + fieldName + "</i>}";
+                } else {
+                    replaceHtml = fieldLabel;
+                }
+                currentContentHtml.html(replaceHtml);
+            }
+
+            //level=[0,1,1,1]
+            function createControl(level, type, label, name, ltemp, vtemp, gs, fieldParameters, data) {
+                var currentJson = json;
+                var leveCount = level.length;
+                var o = {};
+                if (data !== undefined && data !== null) {
+                    o = data;
+                }
+                o.ControlType = type;
+                o.Label = label;
+                o.Name = name;
+                o.Parameters = fieldParameters;
+                o.ValueTemplate = vtemp;
+                o.LabelTemplate = ltemp;
+                o.GridSystem = gs;
+                if (data === undefined || data === null) {
+                    o.SubFormDesgins = [];
+                }
+                $.each(level, function(i, v) {
+                    if (i === (leveCount - 1)) {
+                        currentJson[v] = o;
+                    } else {
+                        currentJson = currentJson[v].SubFormDesgins;
+                    }
+                });
+                jsonChanged4Prev = true;
+                jsonChanged4Temp = true;
+                $("#jsonSettings").val(JSON.stringify(json, null, '\t'));
+                return o;
+            }
+
+            function getCurrentLevel() {
+                var currentSubLevel = currentScope.siblings().length;
+                var level = [];
+                if (currentLevel === undefined) {
+                    level.push(currentSubLevel);
+                } else {
+                    level = $.map(currentLevel.split(','), function(value) {
+                        return parseInt(value, 10);
+                    });
+                    level.push(currentSubLevel);
+                }
+                return level;
+            }
+
+            function bindingEvents() {
+                $("body").off("click", ".sectionBtn");
+                $("body").on("click", ".sectionBtn", function() {
+                    currentScope = $(this).parent().parent().parent();
+                    currentLevel = $(this).parent().parent().parent().parent().attr("level");
+                    $("#sectionIsEditModel").val("false");
+                    $("#sectionRId").val('');
+                    $("#SectionName").val('');
+                    $("#SectionEnableCollapse").prop("checked", false);
+                    $("#sectionForm").window('center');
+                    $("#sectionForm").window('open');
+                });
+                $("body").off("click", ".fieldBtn");
+                $("body").on("click", ".fieldBtn", function() {
+                    currentScope = $(this).parent().parent().parent();
+                    currentLevel = $(this).parent().parent().parent().parent().attr("level");
+                    $("#fieldIsEditModel").val("false");
+                    $("#fieldLabel").val('');
+                    $("#fieldName").val('');
+                    $("#fieldLabelTemplate").val('');
+                    $("#fieldValueTemplate").val('');
+                    $("#fieldGridSystem").val('');
+                    $("#fieldParameters").val('');
+                    $("#fieldForm").window('center');
+                    $("#fieldForm").window("open");
+                });
+                $("body").off("click", ".separatorBtn");
+                $("body").on("click", ".separatorBtn", function() {
+                    currentScope = $(this).parent().parent().parent();
+                    currentLevel = $(this).parent().parent().parent().parent().attr("level");
+                    createLineHtml();
+                    bindingEvents();
+                });
+                $("body").off("click", ".htmlBtn");
+                $("body").on("click", ".htmlBtn", function() {
+                    currentScope = $(this).parent().parent().parent();
+                    currentLevel = $(this).parent().parent().parent().parent().attr("level");
+                    $("#htmlIsEditModel").val("false");
+                    $("#htmlForm").window('center');
+                    $("#htmlForm").window("open");
+                });
+
+
+                $("body").off("click", ".saveSectionBtn");
+                $("body").on("click", ".saveSectionBtn", function() {
+                    var isEditMode = $("#sectionIsEditModel").val();
+                    var sectionName = $("#SectionName").val();
+                    var enableColl = $("#SectionEnableCollapse").prop("checked");
+                    var defaultColl = $("#SectionCollapseDefaultStatus").val();
+                    if (isEditMode === "true") {
+                        var rid = $("#sectionRId").val();
+                        updateControlHtml(0, sectionName, enableColl, '', '', '', defaultColl, rid);
+                    } else {
+                        createSectionHtml(sectionName, enableColl, defaultColl);
+                    }
+                    $("#SectionEnableCollapse").removeAttr("checked");
+                    $("#SectionCollapseDefaultStatus").val("collapse");
+                    $("#SectionName").val('');
+                    $("#sectionForm").window("close");
+
+                    bindingEvents();
+                });
+                $("body").off("click", ".saveField");
+                $("body").on("click", ".saveField", function() {
+                    var fieldLabel = $("#fieldLabel").val();
+                    var fieldName = $("#fieldName").val();
+                    var fieldLabelTemplate = $("#fieldLabelTemplate").val();
+                    var fieldValueTemplate = $("#fieldValueTemplate").val();
+                    var fieldParameters = $("#fieldParameters").val();
+                    var gs = $("#fieldGridSystem").val();
+                    var isEditMode = $("#fieldIsEditModel").val();
+                    if (isEditMode === "true") {
+                        var rid = $("#fieldRId").val();
+                        updateControlHtml(1, fieldLabel, fieldName, fieldLabelTemplate, fieldValueTemplate, gs, fieldParameters, rid);
+                    } else {
+                        createControlHtml(fieldLabel, fieldName, fieldLabelTemplate, fieldValueTemplate, gs, fieldParameters);
+                    }
+                    $("#fieldLabel").val('');
+                    $("#fieldName").val('');
+                    $("#fieldLabelTemplate").val('');
+                    $("#fieldValueTemplate").val('');
+                    $("#fieldGridSystem").val('');
+                    $("#fieldParameters").val('');
+                    $("#fieldForm").window("close");
+                    bindingEvents();
+                });
+                $("body").off("click", ".saveHtmlBtn");
+                $("body").on("click", ".saveHtmlBtn", function() {
+                    var htmlText = $("#htmlText").val();
+                    var isEditMode = $("#htmlIsEditModel").val();
+                    if (isEditMode === "true") {
+                        var rid = $("#htmlRId").val();
+                        updateControlHtml(2, htmlText, '', '', '', '', '', rid);
+                    } else {
+                        createHtml(htmlText);
+                    }
+
+                    $("#htmlText").val('');
+                    $("#htmlForm").window("close");
+
+                    bindingEvents();
+                });
+
+                $("body").off("click", ".bt-panelClose");
+                $("body").on("click", ".bt-panelClose", function() {
+                    var self = $(this);
+                    $.messager.confirm('Remove item', 'Do you want to remove this?', function(r) {
+                        if (r) {
+                            showLoading("Template redrawing...");
+                            var panel = self.parent().parent();
+                            var type = self.attr("control");
+                            var p = panel.parent();
+                            var current = "";
+                            if (type === "section") {
+                                current = self.parent().siblings().attr("level");
+                            } else {
+                                current = p.attr("level");
+                            }
+                            var index = p.children(".bt-panel").index(panel);
+                            var level = [];
+                            if (current === undefined || current === null) {
+                                level.push(index);
+                            } else {
+                                level = $.map(current.split(','), function(value) {
+                                    return parseInt(value, 10);
+                                });
+                                level.push(index);
+                            }
+                            if (type === "section") {
+                                level.splice(level.length - 1, 1);
+                            }
+                            var currentJson = json;
+                            var leveCount = level.length;
+                            $.each(level, function(i, v) {
+                                if (i === (leveCount - 1)) {
+                                    currentJson.splice(v, 1);
+                                } else {
+                                    currentJson = currentJson[v].SubFormDesgins;
+                                }
+                            });
+                            $(".tempDiv .bt-panel").remove();
+                            currentScope = $("#initMenu");
+                            renderTemplate(json);
+                            $("#jsonSettings").val(JSON.stringify(json, null, '\t'));
+                            closeLoading();
+                        }
+                    });
+                });
+                $("body").off("click", ".bt-panelEdit");
+                $("body").on("click", ".bt-panelEdit", function() {
+                    var panel = $(this).parent().find('.settingJson').val();
+                    currentContentHtml = $(this).parent().find(".ContentHtmlInfo");
+                    var obj = jsonDiv[panel];
+                    if (obj.ControlType === 0) {
+                        var iscollChecked = (obj.Name === "true" || obj.Name === true);
+                        $("#sectionIsEditModel").val("true");
+                        $("#sectionRId").val(panel);
+                        $("#SectionName").val(obj.Label);
+                        $("#SectionEnableCollapse").prop("checked", iscollChecked);
+                        $("#SectionCollapseDefaultStatus").val(obj.Parameters);
+                        $("#sectionForm").window('center');
+                        $("#sectionForm").window('open');
+                    } else if (obj.ControlType === 1) {
+                        $("#fieldIsEditModel").val("true");
+                        $("#fieldRId").val(panel);
+                        $("#fieldLabel").val(obj.Label);
+                        $("#fieldName").val(obj.Name);
+                        $("#fieldLabelTemplate").val(obj.LabelTemplate);
+                        $("#fieldValueTemplate").val(obj.ValueTemplate);
+                        $("#fieldGridSystem").val(obj.GridSystem);
+                        $("#fieldParameters").val(obj.Parameters);
+                        $("#fieldForm").window('center');
+                        $("#fieldForm").window("open");
+                    } else {
+                        $("#htmlIsEditModel").val("true");
+                        $("#htmlRId").val(panel);
+                        $("#htmlText").val(obj.Label);
+                        $("#htmlForm").window('center');
+                        $("#htmlForm").window("open");
+                    }
+                });
+
+            }
+        });
+    </script>
+}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1 id="formName"></h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="overlay"></div>
+
+            <div id="AjaxLoading" class="showbox">
+                <div class="loadingWord">
+                    <img src="~/Content/Images/waiting.gif" /><span id="loadingMessage">Page rendering...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#tabTemplate" aria-controls="Template" role="tab" data-toggle="tab" class="tempTabBtn">Template</a></li>
+                <li role="presentation"><a href="#tabJson" aria-controls="Json" role="tab" data-toggle="tab">Json</a></li>
+                <li role="presentation"><a href="#tabStyles" aria-controls="Styles" role="tab" data-toggle="tab">Styles</a></li>
+                <li role="presentation"><a href="#tabJavascripts" aria-controls="Javascripts" role="tab" data-toggle="tab">Javascripts</a></li>
+                <li role="presentation"><a href="#tabPreview" aria-controls="Json" role="tab" data-toggle="tab" class="PrevTabBtn">Preview</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tabTemplate">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tempDiv">
+                                <div class="dropdown" id="initMenu">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="designMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="designMenu">
+                                        <li><a href="#" class="sectionBtn">Section</a></li>
+                                        <li><a href="#" class="fieldBtn">Field</a></li>
+                                        <li><a href="#" class="separatorBtn">Line</a></li>
+                                        <li><a href="#" class="htmlBtn">Html</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tabJson">
+                    <div style="margin-top: 10px;">
+                        <textarea class="form-control" rows="20" id="jsonSettings" placeholder="Json">
+                            
+                        </textarea>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tabStyles">
+                    <div style="margin-top: 10px;">
+                        <form>
+                            <textarea class="form-control" rows="20" id="styleSettings" placeholder="&lt;style&gt;Wirte your code here&lt;/style&gt;">
+                                
+                                    </textarea>
+                        </form>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tabJavascripts">
+                    <div style="margin-top: 10px;">
+                        <textarea class="form-control" rows="20" id="jsSettings" placeholder="&lt;script&gt;Wirte your code here&lt;/script&gt;"></textarea>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tabPreview">
+                    <div class="row">
+                        <div class="col-md-12" style="margin: 20px 20px 30px 0;">
+
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="dataId">Data id:</label>
+                                    <input type="text" class="form-control" id="dataId" placeholder="Default:PreviewData" style="min-width: 340px"/>
+                                </div>
+                                <button type="button" class="btn btn-default prevRefreshDataId" aria-label="Left Align">
+                                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                                </button>&nbsp;&nbsp;<button type="button" class="btn btn-default prevFullscreen" aria-label="Left Align">
+                                    <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                                </button>
+                            </form>
+                            <hr/>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"><iframe name="previewIframe" id="previewIframe" frameborder="0" scrolling="auto"  class="autoHeight" style="width: 100%"></iframe></div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center; margin: 20px 0 30px 0">
+            <button type="button" class="btn btn-primary saveForm">Save</button>
+            <button type="button" class="btn btn-default backToList">Close</button>
+        </div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="sectionForm" class="easyui-window" title="Section" shadow="true" modal="true" closed="true" minimizable="false" maximizable="false" collapsible="false" style="width: 420px;">
+        <form style="padding: 20px" class="form-horizontal" id="formSection">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Section name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="SectionName" name="Label" placeholder="Section name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Enable collapse</label>
+                <div class="col-sm-3">
+                    <label>
+                        <input  type="checkbox" id="SectionEnableCollapse" name="EnableCollapse"> Enable
+                    </label>
+                </div>
+                <div class="col-sm-5">
+                    <select class="form-control" id="SectionCollapseDefaultStatus" name="CollapseDefaultStatus">
+                        <option value="collapse" selected="selected">Collapse</option>
+                        <option value="collapse in">Expand</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12" style="text-align: right; margin-top: 15px">
+                    <button type="button" class="btn btn-success saveSectionBtn">Save</button>&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-default  closeBtn" t="section">Close</button>
+                </div>
+            </div>
+            <input type="hidden" name="ControlType" value="0"/>
+            <input type="hidden" id="sectionIsEditModel" value="false"/>
+            <input type="hidden" id="sectionRId" value="" />
+        </form>
+    </div>
+
+    <div id="fieldForm" class="easyui-window" title="Field" shadow="true" modal="true" closed="true" minimizable="false" maximizable="false" collapsible="false" style="width: 420px;">
+        <form style="padding: 20px" class="form-horizontal" id="formField">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Label name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="fieldLabel" name="Label" placeholder="Label name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Field name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"  id="fieldName" name="Name" placeholder="Field name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Label template</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" rows="3" id="fieldLabelTemplate"  name="LabelTemplate" placeholder="e.g. <h1>{data}</h1> ; {data} is replace key"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Value template</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" rows="3" id="fieldValueTemplate" name="ValueTemplate" placeholder="e.g. <h1>{data}</h1> ; {data} is replace key"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Grid system</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" rows="3" id="fieldGridSystem" name="GridSystem" placeholder="e.g. {col-xs-6 col-sm-4;col-xs-6 col-sm-4} . With a semicolon separates two classes"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Parameters</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" rows="3" id="fieldParameters" name="Parameters" placeholder="e.g. {-l -f DD/MM/YYYY} . '-f' or '-format':format string value;'-l' or '-local':to localtime, only for datetime"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12" style="text-align: right; margin-top: 15px">
+                    <button type="button" class="btn btn-success saveField">Save</button>&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-default  closeBtn" t="field">Close</button>
+                </div>
+            </div>
+            <input type="hidden" name="ControlType" value="1"/>
+            <input type="hidden" id="fieldIsEditModel" value="false" />
+            <input type="hidden" id="fieldRId" value="" />
+        </form>
+    </div>
+
+    <div id="htmlForm" class="easyui-window" title="Html/Style/Script" shadow="true" modal="true" closed="true" minimizable="false" maximizable="false" collapsible="false" style="width: 420px;">
+        <form style="padding: 20px" class="form-horizontal" id="formHtml">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Html</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="3" id="htmlText" name="Label" placeholder="Html"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12" style="text-align: right; margin-top: 15px">
+                    <button type="button" class="btn btn-success saveHtmlBtn">Save</button>&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-default closeBtn" t="html">Close</button>
+                </div>
+            </div>
+            <input type="hidden" name="ControlType" value="2"/>
+            <input type="hidden" id="htmlIsEditModel" value="false" />
+            <input type="hidden" id="htmlRId" value="" />
+        </form>
+    </div>
+
+    <div class="dropdown designToolMenu">
+        <button class="btn btn-default dropdown-toggle" type="button" id="designMenum" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="designMenum">
+            <li><a href="#" class="sectionBtn">Section</a></li>
+            <li><a href="#" class="fieldBtn">Field</a></li>
+            <li><a href="#" class="separatorBtn">Line</a></li>
+            <li><a href="#" class="htmlBtn">Html</a></li>
+        </ul>
+    </div>
+  
+</div>

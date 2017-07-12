@@ -1,0 +1,87 @@
+﻿@using PwC.C4.Common.Provider
+@using PwC.C4.Infrastructure.Config
+
+@{
+    var menus = CurrentUserProvider.MenuRoles();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@AppSettings.Instance.GetApplicationDisplayName()</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+
+<div class="header">
+    <a href="#" target="_self" class="logo">
+        <img src="~/Content/Images/pwc_logo.png"/>
+    </a>
+    <a href="search.html" target="_self" class="mobile_search">
+        <img src="~/Content/Images/search_mobile.png"/>
+    </a>
+    <div class="header_right">
+        <h1>@AppSettings.Instance.GetApplicationDisplayName()</h1>
+        <div class="search">
+            <input type="text" id="globalSearch" name="Search" value="Search" onfocus="if (value == 'Search') {value = ''}" onblur="if (value == '') {value = 'Search'}">
+            <a href="javacrit:void(0)" id="goSearchBtn" target="_self"></a>
+        </div>
+        <div class="currentUserName">
+            <span>@CurrentUserProvider.StaffName</span>
+        </div>
+    </div>
+</div>
+    <div class="navigation">
+        <ul>
+            @foreach (var menu in menus.Where(m => !m.ParentMenuID.HasValue || m.ParentMenuID.ToString() == "00000000-0000-0000-0000-000000000000"))
+            {
+                var currentSytle = "";
+                if (menu.MenuName == ViewBag.Menu)
+                {
+                    currentSytle = "active";
+                }
+                <li class="nav0 @currentSytle">
+                    <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@menu.MenuURL">@menu.MenuName</a>
+                    @{
+                        var subs = menus.Where(m => m.ParentMenuID.HasValue && m.ParentMenuID.ToString() != "00000000-0000-0000-0000-000000000000");
+                        if (subs.Any())
+                        {
+                            <ul>
+                                @foreach (var sub in subs)
+                                {
+                                    if (menu.MenuID == sub.ParentMenuID.Value)
+                                    {
+                                        <li class="nav0">
+                                            <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@sub.MenuURL">@sub.MenuName</a>
+                                        </li>}
+                                }
+                            </ul>
+                        }
+                    }
+
+                </li>}
+
+        </ul>
+        <div class="navspace"></div>
+    </div>
+@RenderBody()
+<div class="footer" style="clear: both;">
+    ©2016 PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see <a href="http://www.pwc.com/structure" target="_self">www.pwc.com/structure</a> for further details.
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#goSearchBtn").click(function() {
+            var searchValue = $("#globalSearch").val();
+            if (searchValue !== "Search" && searchValue !== "") {
+                window.open("@Url.Action("Search","Home")?key=" + searchValue + "&size=10&from=0", '_self');
+                return false;
+            }
+        });
+    });
+</script>
+@RenderSection("scripts", required: false)
+</body>
+</html>

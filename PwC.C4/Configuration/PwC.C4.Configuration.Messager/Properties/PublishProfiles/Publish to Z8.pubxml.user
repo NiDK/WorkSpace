@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Source Code\Publish\PwC.Configuration</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/ApplicationCenter.ClientClass.dll">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="bin/Highlight.dll">
+      <publishTime>06/27/2012 23:55:52</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>12/24/2015 00:39:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/24/2015 00:38:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/24/2015 00:38:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/24/2015 00:38:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/24/2015 00:38:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/24/2015 00:38:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/24/2015 00:38:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/24/2015 00:38:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/16/2015 03:55:43</publishTime>
+    </File>
+    <File Include="bin/MsieJavaScriptEngine.dll">
+      <publishTime>03/04/2016 18:45:36</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/24/2016 00:06:54</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Common.dll">
+      <publishTime>05/28/2016 16:18:02</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Common.pdb">
+      <publishTime>05/28/2016 16:18:02</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Configuration.dll">
+      <publishTime>05/28/2016 16:18:05</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Configuration.Messager.dll">
+      <publishTime>05/28/2016 16:18:18</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Configuration.Messager.pdb">
+      <publishTime>05/28/2016 16:18:18</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Configuration.pdb">
+      <publishTime>05/28/2016 16:18:05</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.Cache.dll">
+      <publishTime>05/28/2016 16:18:04</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.Cache.pdb">
+      <publishTime>05/28/2016 16:18:04</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.dll">
+      <publishTime>05/28/2016 16:18:01</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.Logger.dll">
+      <publishTime>05/28/2016 16:18:04</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.Logger.pdb">
+      <publishTime>05/28/2016 16:18:04</publishTime>
+    </File>
+    <File Include="bin/PwC.C4.Infrastructure.pdb">
+      <publishTime>05/28/2016 16:18:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>12/24/2015 00:39:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>12/24/2015 00:39:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>12/24/2015 00:39:37</publishTime>
+    </File>
+    <File Include="bin/ru-ru/MsieJavaScriptEngine.resources.dll">
+      <publishTime>03/04/2016 18:45:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/24/2015 00:38:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>12/24/2015 00:38:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/16/2015 03:55:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/24/2015 00:38:19</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>12/14/2015 15:53:16</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>12/24/2015 00:38:28</publishTime>
+    </File>
+    <File Include="bin/Wintellect.PowerThreading.dll">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="ConfigManagerHandler.ashx">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="ConfigVersionHandler.ashx">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap-dialog.min.css">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/26/2016 12:57:27</publishTime>
+    </File>
+    <File Include="ResourceManagerHandler.ashx">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/ai.0.15.0-build58334.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/ai.0.15.0-build58334.min.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/bootstrap-dialog.min.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.map">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.min.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="scripts/modernizr-2.6.2.js">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Common/NoAuthorize.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Home/AddVersion.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Home/Admin.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Home/Menu.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Home/ShowDetail.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/26/2016 12:18:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/28/2016 16:30:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

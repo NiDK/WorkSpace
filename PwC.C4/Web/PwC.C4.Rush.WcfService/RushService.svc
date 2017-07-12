@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PwC.C4.Rush.WcfService.RushService" CodeBehind="RushService.svc.cs" %>

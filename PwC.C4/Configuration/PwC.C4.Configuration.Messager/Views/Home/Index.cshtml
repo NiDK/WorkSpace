@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function() {
+            $(".applist").click(function() {
+                var i = $(this);
+                var configId = i.attr("config");
+                var appCode = i.attr("appcode");
+                var major = i.attr("major");
+                $.get("/PwC.Configuration/Home/ShowAllVersion", {
+                    configId: configId,
+                    appcode: appCode,
+                    major: major,
+                    index: 0
+                }, function(resp) {
+                    var html = "<div class=\"table-responsive\">" +
+                        "<table class=\"table table-hover\">" +
+                        "<thead><tr><th style=\"width: 10%\">Minor</th>" +
+                        "<th style=\"width: 15%\">Create by</th><th style=\"width: 30%\">Create time</th>" +
+                        "<th style=\"width: 30%\">Management</th></tr></thead><tbody>";
+                    $.each(resp.Data, function(i, v) {
+                        var detal = "<a href='/PwC.Configuration/Home/ShowDetail?id=" + v.Id + "&method=preview' target='_blank'>Detail</a>";
+                        var recovery = "  <a href=\"javascript:recovery('" + configId + "','" + appCode + "'," + major + "," + v.Minor + ",'" + v.Id + "')\" class='recovery'>Recovery</a>";
+                        if (i === 0) {
+                            recovery = '  Current version';
+                        }
+                        var h = "<tr><td>" + v.Minor + "</td><td>" + v.Creator + "</td><td>" + v.CreateTimeStr + "</td><td>" + detal + recovery + "</td></tr>";
+                        html = html + h;
+                    });
+                    html = html + "</tbody></table></div>";
+                    BootstrapDialog.show({
+                        title: "<strong>" + i.attr("configName") + "</strong>&nbsp;&nbsp;&nbsp;&nbsp;" + appCode + "." + major,
+                        message: html
+                    });
+                });
+
+            });
+        });
+
+        function recovery(configId, appCode, major, minor, id) {
+            BootstrapDialog.confirm('Recover the version ' + major + '.' + minor + ', are you sure?', function(result) {
+                if (result) {
+                    $.post("@Url.Action("Recovery")", { configId: configId, appCode: appCode, major: major, id: id },
+                        function(resp) {
+                            if (resp) {
+                                window.location.reload();
+                            }
+                        });
+                }
+            });
+
+        }
+        function addApp(configId,configName) {
+            BootstrapDialog.show({
+                title: 'Create new application for '+configName,
+                message: '<input type="text" class="form-control input-lg" id="appCode" placeholder="Application code" aria-describedby="helpBlock">' +
+                    '<span id="helpBlock" class="help-block">Input application code here.</span>',
+                buttons: [
+                    {
+                        label: 'Save',
+                        action: function (dialogRef) {
+                            dialogRef.enableButtons(false);
+                            dialogRef.setClosable(false);
+                            var appCode = dialogRef.getModalBody().find('#appCode').val();
+                            appCode = $.trim(appCode);
+                            $.post("@Url.Action("CreateApplication")", { configTypeId: configId, appCode: appCode }, function (resp) {
+                                if (resp===1) {
+                                    dialogRef.close();
+                                    BootstrapDialog.alert('Create application for ' + configName + ' success!', function () {
+                                        window.location.reload();
+                                    });
+                                } else if (resp === -1) {
+                                    BootstrapDialog.alert('application code has been existed!');
+                                } else {
+                                    BootstrapDialog.alert('System error!');
+                                }
+                                dialogRef.setClosable(true);
+                                dialogRef.enableButtons(true);
+                            });
+                        }
+                    }, {
+                        label: 'Close',
+                        action: function(dialogRef) {
+                            dialogRef.close();
+                        }
+                    }
+                ]
+            });
+        }
+
+    </script>
+}
+
+@model PwC.C4.Configuration.Messager.Model.PageModel<PwC.C4.Configuration.Messager.Model.ConfigurationType>
+
+@if (Model.Datas.Count > 0)
+{
+    foreach (var configInfo in Model.Datas)
+    {
+        <div class="table-responsive">
+            <h3>@configInfo.Name | <span style="font-size: 16px"><a href="javascript:addApp('@configInfo.Id','@configInfo.Name')">Add new application</a></span></h3>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th style="width: 30%">App code</th>
+                    <th style="width: 10%">Major</th>
+                    <th style="width: 10%">Minor</th>
+                    <th style="width: 20%">Last update</th>
+                    <th style="width: 30%">Management</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var con in configInfo.ConfigurationDetails.Datas)
+                {
+                    <tr>
+                        <td>@con.AppCode</td>
+                        <td>@con.Major</td>
+                        <td>@con.Minor</td>
+                        <td>@con.CreateTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td> @Html.ActionLink("Add minor", "AddVersion", new {configId = configInfo.Id, appCode = con.AppCode, major = con.Major}) / <a href="javascript:void(0)" class="applist" config="@configInfo.Id" appcode="@con.AppCode" major="@con.Major" configName="@configInfo.Name">Show all version</a>
+                      </td>
+                    </tr>
+                }
+
+                </tbody>
+
+            </table>
+        </div>
+
+    }
+}

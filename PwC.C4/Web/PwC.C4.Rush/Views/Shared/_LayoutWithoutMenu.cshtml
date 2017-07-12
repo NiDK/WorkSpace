@@ -1,0 +1,25 @@
+﻿@using ApplicationCenter.Model
+@using PwC.C4.Common.Provider
+@using PwC.C4.Infrastructure.Config
+@using PwC.C4.Membership
+@using PwC.C4.Metadata.Service
+@using CurrentUser = PwC.C4.Membership.CurrentUser
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@AppSettings.Instance.GetApplicationDisplayName()</title>
+    <link href="~/Content/C4Styles.css" rel="stylesheet" />
+    <link href="~/Content/style2.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+</head>
+<body>
+
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿====================================================================
+Date:2016-07-28 15:20:13,311
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[10]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-28 15:20:13,311
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[9]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-28 15:28:20,266
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[54]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-28 15:28:20,316
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-28 15:29:42,008
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[65]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---

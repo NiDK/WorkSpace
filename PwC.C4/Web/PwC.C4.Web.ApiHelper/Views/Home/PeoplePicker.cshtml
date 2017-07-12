@@ -1,0 +1,255 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        PwC C4 API Helper
+    </title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/DataPicker/css/datapicker.base.css" rel="stylesheet" />
+    <link href="~/Scripts/DataPicker/template/people/styles.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/patch.css" rel="stylesheet" />
+    <link href="~/Content/docs.min.css" rel="stylesheet" />
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+    <link href="~/Content/hl-default.css" rel="stylesheet" />
+    <script src="~/Scripts/highlight.pack.js"></script>
+    <!--[if lt IE 9]><script src="~/Scripts/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/html5shiv.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+
+     <![endif]-->
+
+</head>
+<body>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../" class="navbar-brand">PwC C4 API Helper</a>
+            </div>
+            <nav id="bs-navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@Url.Action("DataPicker")">DataPicker</a>
+                    </li>
+                    <li><a href="@Url.Action("PeoplePicker")">PeoplePicker-Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+        <div class="container">
+            <h1>People picker v 0.1</h1>
+            <p>Staff and group selector</p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+
+        <div class="row">
+            <div class="col-md-10" role="main">
+
+                <div class="bs-docs-section">
+                    <h1 id="example" class="page-header">示例</h1>
+
+                    <p class="lead">下文中简单展示了DataPicker控件使用PwC内部Staff以及Group的数据源，从而实现的PeoplePicker。如有其它疑问请@Chenhui Yu</p>
+
+                    <h2 id="grid-example-basic">示例1：数据类型设置</h2>
+                    <p>
+                        当<kbd>input</kbd>存在默认数据时，Data picker会自动处理数据为展示状态，method包含三种，分别是<code>all</code>,<code>staff</code>,<code>group</code>，对应的是三种不同的数据筛选器，JS代码如下：
+                    </p>
+                    <pre><code class="javascript">$('#Test1').datapicker("people", {
+    para: {"method": "all"}
+});</code></pre>
+                    <p>html示例如下：</p>
+                    <pre><code class="html">&lt;input class="picker" value="CN112076,CN115681,CN000927" id="Test1" name="Test1" /&gt;</code></pre>
+                    <p>效果如下：</p>
+                    <input class="picker" value="CN112076,CN115681,CN000927" id="Test1" />
+
+                    <div style="clear: both"></div>
+                    <h2 id="grid-example-fluid">示例2：选择项上限设置</h2>
+                    <p>
+                        当设置了<code>maxCount</code>时，超过<code>maxCount</code>设定时，则不能自动联想，不能添加新的被选项，JS代码如下：
+                    </p>
+                    <pre><code class="javascript">$('#Test1').datapicker("people", {
+    maxCount:2,
+    para: {"method": "all"}
+});</code></pre>
+                    <p>html示例如下：</p>
+                    <pre><code class="html">&lt;input class="picker" id="Test2" /&gt;</code></pre>
+                    <p>效果如下：</p>
+                    <input class="picker" id="Test2" />
+
+                    <div style="clear: both"></div>
+                    <h2 id="grid-example-mixed">示例3：对于页面的设置与调整</h2>
+                    <p>修改自动联想输入框宽度，显示上限以及搜索框默认显示文字，JS代码如下：</p>
+                    <pre><code class="javascript">$('#Test1').datapicker("people", {
+    autocomplete: {
+        enable: true,
+        autoFill: true,
+        limit: 5,
+        inputbox: { minwidth: 200, maxwidth: 800 }
+    },
+    searchDialog:{inputText:"Search staff name or staff email"},
+    para: { "method": "all" }
+});</code></pre>
+                    <p>html示例如下：</p>
+                    <pre><code class="html">&lt;input class="picker" id="Test3" /&gt;</code></pre>
+                    <p>效果如下：</p>
+                    <input class="picker" id="Test3" />
+
+                    <div style="clear: both"></div>
+
+
+                    <h2 id="grid-example-mixed-complete">示例4：外部方法调用</h2>
+                    <p>通过调用外部方法来操作Data picker内数据，JS代码如下：</p>
+                    <pre><code class="javascript">var item = $('#Test1').datapicker("people", {
+        para: { "method": "all" }
+});
+                                                     
+function getValue() {
+        var v = item.getValue();
+        alert(JSON.stringify(v));
+}
+function setValue(values) {
+        item.setValue(values);
+}
+function changeValue(values) {
+        item.changeValue(values);
+}
+function changeStatus(s) {
+        item.setReadOnly(s);
+}
+                        </code></pre>
+                    <p>html示例如下：</p>
+                    <pre><code class="html">&lt;input class="picker" id="Test4" /&gt;</code></pre>
+                    <p>效果如下：</p>
+                    <input class="picker" id="Test4" />
+
+                    <div style="clear: both"></div><br />
+                    <a href="javascript:getValue()">Get value</a> | <a href="javascript:setValue()">Set values</a>| <a href="javascript:changeValue()">Change values</a> |
+                    <a href="javascript:changeStatus(true)">Change status readonly</a> | <a href="javascript:changeStatus(false)">Change status enable</a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-2" role="complementary">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="nav bs-docs-sidenav">
+
+                        <li>
+                            <a href="#example">示例</a>
+                            <ul class="nav">
+                                <li><a href="#grid-example-basic">示例1：数据类型设置</a></li>
+                                <li><a href="#grid-example-fluid">示例2：选择项上限设置</a></li>
+                                <li><a href="#grid-example-mixed">示例3：对于页面的设置与调整</a></li>
+                                <li><a href="#grid-example-mixed-complete">示例4：外部方法调用</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <a class="back-to-top" href="#top">
+                        返回顶部
+                    </a>
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+            <p>© 2016 PwC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/docs.min.js"></script>
+    <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+    <script src="~/Scripts/DataPicker/pwc.c4.datapicker.config.js"></script>
+    <script src="~/Scripts/DataPicker/pwc.c4.datapicker.js"></script>
+    <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
+        var item1;
+        var item2;
+        var item3;
+        var item4;
+        $(document)
+            .ready(function() {
+                item1 = $('#Test1')
+                    .datapicker("people",
+                        {
+                            para: { "method": "all" }
+                        }
+                    );
+                item2 = $('#Test2')
+                    .datapicker("people",
+                        {
+                            maxCount:2,
+                            para: { "method": "all" }
+                        }
+                    );
+                item3 = $('#Test3')
+                    .datapicker("people",
+                        {
+                            autocomplete: {
+                                enable: true,
+                                autoFill: true,
+                                limit: 5,
+                                inputbox: { minwidth: 200, maxwidth: 800 }
+                            },
+                            searchDialog:{inputText:"Search staff name or staff email"},
+                            para: { "method": "all" }
+                        }
+                    );
+                item4 = $('#Test4')
+                    .datapicker("people",
+                        {
+                            para: { "method": "all" }
+                        }
+                    );
+            });
+
+        function getValue() {
+            var v = item4.getValue();
+            alert(JSON.stringify(v));
+        }
+
+        function setValue() {
+            item4.setValue('@@CN All,10036');
+        }
+
+        function changeValue(values) {
+            item4.changeValue('@@HK All,10373,13089');
+        }
+
+        function changeStatus(s) {
+            item4.setReadOnly(s);
+        }
+    </script>
+</body>
+</html>

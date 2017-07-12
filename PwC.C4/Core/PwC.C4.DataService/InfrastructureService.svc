@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PwC.C4.DataService.InfrastructureService" CodeBehind="InfrastructureService.svc.cs" %>

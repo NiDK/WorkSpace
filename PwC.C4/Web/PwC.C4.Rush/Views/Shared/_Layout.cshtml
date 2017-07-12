@@ -1,0 +1,72 @@
+﻿@using ApplicationCenter.Model
+@using PwC.C4.Common.Provider
+@using PwC.C4.Infrastructure.Config
+@using PwC.C4.Membership
+@using PwC.C4.Metadata.Service
+@using CurrentUser = PwC.C4.Membership.CurrentUser
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@AppSettings.Instance.GetApplicationDisplayName()</title>
+    <link href="~/Content/C4Styles.css" rel="stylesheet" />
+    <link href="~/Content/style2.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+</head>
+<body>
+
+    <div class="header">
+        <a href="#" target="_self" class="logo">
+            <img src="~/Content/Images/pwc_logo.png" />
+        </a>
+        <a href="javascript:void(0)" target="_self" class="mobile_search">
+            <img src="~/Content/Images/search_mobile.png" />
+        </a>
+        <div class="header_right">
+            <div class="header_right_title">
+                <h1></h1>
+                <div class="currentUserName">
+                    <span>Welcome,@CurrentUser.StaffName</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="navblock" style="background-image: none;">
+        <ul id="nav">
+            @{
+                var menu = HtmlCategoryService.Instance().GetHtmlCategory_ListByAppCode("menu", CurrentUser.Roles.ToList());
+                foreach (var htmlCategory in menu)
+                {
+                    <li class="nav1" style="background: #fff;">
+                        <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@htmlCategory.Url" style="margin-right: 12px;">@htmlCategory.DisplayName</a>
+                        @if (htmlCategory.SubCategories != null && htmlCategory.SubCategories.Any())
+                        {
+                            <ul id="navselected" style="z-index: 9999;">
+                                @foreach (var h in htmlCategory.SubCategories)
+                                {
+                                    <li class="nav1">
+                                        <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@h.Url">@h.DisplayName</a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+
+                    </li>
+                }
+            }
+        </ul>
+        <div class="navspace"></div>
+    </div>
+
+    @RenderBody()
+    <div class="footer" style="clear: both;">
+        ©2016 PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see <a href="http://www.pwc.com/structure" target="_self">www.pwc.com/structure</a> for further details.
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

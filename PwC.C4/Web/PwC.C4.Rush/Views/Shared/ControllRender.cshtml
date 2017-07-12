@@ -1,0 +1,113 @@
+﻿@using PwC.C4.Infrastructure.Helper
+@using PwC.C4.Rush.Models
+@using PwC.C4.Rush.Service
+@using PwC.C4.Rush.WcfService.Models.Enum
+@model PwC.C4.Rush.Models.FormItem
+
+@switch (Model.Control.ControlType)
+{
+    case ControlType.Separator:
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+        break;
+    case ControlType.Section:
+        var isColl = "";
+        var collIcon = "";
+        var divCollClass = "";
+        var handStyle = "";
+        var headerClass = "";
+        var divId = Guid.NewGuid();
+        if (!string.IsNullOrEmpty(Model.Control.Name) && Model.Control.Name == "true")
+        {
+            isColl = "data-toggle=collapse data-target=#sectId-" + divId ;
+            collIcon = "<i class=\"fa fa-caret-down fa-2x\" aria-hidden=\"true\"></i>";
+            divCollClass = Model.Control.Parameters;
+            if (divCollClass == "collapse")
+            {
+                headerClass = "collapsed";
+            }
+            handStyle = "style=cursor:pointer;";
+        }
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading @headerClass" @isColl>
+                        @Html.Raw(@collIcon)<h3 class="panel-title" @Html.Raw(handStyle) >@Model.Control.Label</h3>
+                    </div>
+                    <div class="panel-body @divCollClass"  id="sectId-@divId">
+                        @if (Model.Control.SubFormDesgins != null && Model.Control.SubFormDesgins.Any())
+                        {
+                            foreach (var s in Model.Control.SubFormDesgins)
+                            {
+                                var item = new FormItem()
+                                {
+                                    Control = s,
+                                    Data = Model.Data
+                                };
+                                Html.RenderPartial("ControllRender", item);
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        break;
+    case ControlType.Control:
+
+        var valueHtml = "";
+        var vt = Model.Control.ValueTemplate ?? "";
+        var lt = Model.Control.LabelTemplate ?? "";
+        var gridSystem = "col-md-2;col-md-10";
+        if (!string.IsNullOrEmpty(Model.Control.GridSystem) && Model.Control.GridSystem.IndexOf(";", StringComparison.Ordinal) > 0 && !Model.Control.GridSystem.EndsWith(";"))
+        {
+            gridSystem = Model.Control.GridSystem;
+        }
+
+        var gsSize = gridSystem.Split(new string[] {";"}, StringSplitOptions.RemoveEmptyEntries);
+        if (!string.IsNullOrEmpty(Model.Control.Name) && Model.Data.ContainsKey(Model.Control.Name))
+        {
+            var v = "";
+            if (!string.IsNullOrEmpty(Model.Control.Parameters))
+            {
+                var c4Data = new C4DataFormat(Model.Data[Model.Control.Name]);
+                v = c4Data.ToString(Model.Control.Parameters);
+            }
+            else
+            {
+                v = Model.Data[Model.Control.Name].ToString();
+            }
+            valueHtml = vt.IndexOf("{data}", StringComparison.Ordinal) < 0 ? v : vt.Replace("{data}", v);
+        }
+        var labelHtml = lt.IndexOf("{data}", StringComparison.Ordinal) < 0 ? Model.Control.Label : lt.Replace("{data}", Model.Control.Label);
+        <div class="row">
+            @if (!string.IsNullOrEmpty(labelHtml))
+            {
+                <div class="@gsSize[0]">
+                    @MvcHtmlString.Create(labelHtml)
+                </div>
+                    <div class="@gsSize[1]">
+
+                        @MvcHtmlString.Create(valueHtml)
+                    </div>
+            }
+            else
+            {
+                <div class="col-md-12">
+                    @MvcHtmlString.Create(valueHtml)
+                </div>
+            }
+
+        </div>
+        break;
+    case ControlType.Html:
+        <div class="row">
+            <div class="col-md-12">
+                @MvcHtmlString.Create(Model.Control.Label)
+            </div>
+        </div>
+
+        break;
+}

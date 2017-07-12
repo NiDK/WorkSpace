@@ -1,0 +1,39 @@
+﻿====================================================================
+Date:2016-08-02 17:41:13,956
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[194]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-02 19:34:11,533
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[91]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-02 19:35:39,330
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[52]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---

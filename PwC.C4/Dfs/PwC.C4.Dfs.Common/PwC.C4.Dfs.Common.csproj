@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67208A0B-F69D-4C80-98BE-91C1C9A2A447}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PwC.C4.Dfs.Common</RootNamespace>
+    <AssemblyName>PwC.C4.Dfs.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ccr.Core">
+      <HintPath>..\..\_ExternalReferences\Ccr.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PwC.C4.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Infrastructure, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Infrastructure.Cache, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Infrastructure.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Infrastructure.Logger, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Infrastructure.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Metadata, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\DfsConfig.cs" />
+    <Compile Include="Config\DfsServerConfig.cs" />
+    <Compile Include="Model\Const.cs" />
+    <Compile Include="Model\Enums\SecurityLevel.cs" />
+    <Compile Include="Model\Enums\SecurityPolicy.cs" />
+    <Compile Include="Model\Enums\UrlSignDomain.cs" />
+    <Compile Include="Model\Enums\ImageSize.cs" />
+    <Compile Include="Model\Enums\VideoSize.cs" />
+    <Compile Include="Exceptions\DfsException.cs" />
+    <Compile Include="FileArgs.cs" />
+    <Compile Include="FileRepositoryService.cs" />
+    <Compile Include="FileUploadMessage.cs" />
+    <Compile Include="IFileRepositoryService.cs" />
+    <Compile Include="Model\DfsBlockInfo.cs" />
+    <Compile Include="Model\DfsFileInfo.cs" />
+    <Compile Include="Model\DfsItem.cs" />
+    <Compile Include="Model\DfsOperationResult.cs" />
+    <Compile Include="Model\DfsPath.cs" />
+    <Compile Include="Model\DfsRecord.cs" />
+    <Compile Include="Model\DfsStream.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageFileInfo.cs" />
+    <Compile Include="StreamExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Config\DfsConfig.config" />
+    <None Include="Config\DfsServerConfig.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

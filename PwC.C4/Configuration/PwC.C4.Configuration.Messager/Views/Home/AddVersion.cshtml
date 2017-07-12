@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "AddVersion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <script type="text/javascript">
+        function h(e) {
+            $(e).css({ 'height': 'auto', 'overflow-y': 'hidden' }).height(e.scrollHeight);
+        }
+
+        $('textarea').each(function() {
+            h(this);
+        }).on('input', function() {
+            h(this);
+        });
+
+        $(function() {
+            $("#saveConfig").click(function() {
+                var xml = $("#xmlcontent").val();
+                $.post("@Url.Action("CheckXml")", { xml: xml }, function(resp) {
+                    if (resp !== "") {
+                        BootstrapDialog.alert({
+                            title: 'Config schema is valid',
+                            message: '<div style="text-align: center;"><code>' + resp + '</code></div>',
+                            type: BootstrapDialog.TYPE_DANGER,
+                            closable: true
+                        });
+                    } else {
+                        var detail = {
+                            Xml: xml,
+                            ConfigId: $("#ConfigId").val(),
+                            AppCode: $("#AppCode").val(),
+                            Major: $("#Major").val(),
+                            Minor: $("#Minor").val(),
+                            Creator: $("#Creator").val(),
+                            Status: $("#Status").val(),
+                            ConfigName:'@Model.ConfigName'
+                        }
+                        $.post("@Url.Action("SubmitVersion")", detail, function(resp) {
+                            if (resp >= 1) {
+                                BootstrapDialog.alert({
+                                    title: 'Configuration file saved successfully',
+                                    message: 'Configuration <strong>@Model.ConfigName.@Model.AppCode.@Model.Major.'+ resp +'</strong> saved successfully！',
+                                    type: BootstrapDialog.TYPE_SUCCESS,
+                                    closable: true
+                                });
+                            } else {
+                                BootstrapDialog.alert({
+                                    title: 'Configuration file save failed',
+                                    message: 'Configuration <strong>@Model.ConfigName.@Model.AppCode.@Model.Major</strong> save failed！',
+                                    type: BootstrapDialog.TYPE_DANGER,
+                                    closable: true
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+@section styles
+{
+
+}
+@model PwC.C4.Configuration.Messager.Model.ConfigurationDetail
+<h2>@Model.ConfigName <span class="title"><strong>@Model.AppCode @Model.Major</strong></span></h2>
+<form class="form-horizontal" id="configForm">
+    <div class="form-group">
+        <textarea class="form-control" name="Xml" id="xmlcontent" style="width: 100%">@Model.Xml</textarea>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" id="saveConfig">Save</button>
+        <input type="hidden" name="ConfigId" Id="ConfigId" value="@Model.ConfigId" />
+        <input type="hidden" name="AppCode" Id="AppCode" value="@Model.AppCode" />
+        <input type="hidden" name="Major" Id="Major" value="@Model.Major" />
+        <input type="hidden" name="Minor" Id="Minor" value="-1" />
+        <input type="hidden" name="Creator" Id="Creator" value="@Model.Creator" />
+        <input type="hidden" name="Status" Id="Status" value="0" />
+    </div>
+</form>

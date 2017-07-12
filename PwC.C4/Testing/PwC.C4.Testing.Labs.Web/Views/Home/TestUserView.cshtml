@@ -1,0 +1,30 @@
+﻿@using PwC.C4.Common.Provider
+@using PwC.C4.Membership
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TestUserView</title>
+</head>
+<body>
+    <div>
+        @CurrentUserProvider.StaffName<br />
+        @CurrentUserProvider.StaffId<br />
+
+        @{
+            var m = CurrentUserProvider.MenuRoles();
+        }
+        @foreach (var mm in m)
+        {
+            <text>@mm.MenuName</text>
+        }
+        @String.Join(",", CurrentUserProvider.CurrentRole)
+    </div>
+</body>
+</html>

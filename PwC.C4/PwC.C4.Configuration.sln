@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwC.C4.Configuration", "Configuration\PwC.C4.Configuration\PwC.C4.Configuration.csproj", "{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwC.C4.Configuration.Messager", "Configuration\PwC.C4.Configuration.Messager\PwC.C4.Configuration.Messager.csproj", "{18D75357-FDC4-4DAA-95EC-AE64EC65928F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Nuget|Any CPU = Nuget|Any CPU
+		Release|Any CPU = Release|Any CPU
+		UAT|Any CPU = UAT|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.UAT|Any CPU.ActiveCfg = Release|Any CPU
+		{76ADDD2C-797E-49D2-8CD9-72FAD004BFCE}.UAT|Any CPU.Build.0 = Release|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.UAT|Any CPU.ActiveCfg = Release|Any CPU
+		{18D75357-FDC4-4DAA-95EC-AE64EC65928F}.UAT|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

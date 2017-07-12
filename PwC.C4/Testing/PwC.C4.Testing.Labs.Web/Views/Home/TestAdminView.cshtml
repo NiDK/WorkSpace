@@ -1,0 +1,37 @@
+﻿@using PwC.C4.Membership
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TestAdminView</title>
+</head>
+<body>
+<div>
+    @CurrentUser.StaffName<br />
+    @CurrentUser.StaffId<br/>
+    @CurrentUser.StaffCode<br/>
+    @CurrentUser.OrganizationCode<br/>
+    @{
+        var m = CurrentUser.Menus;
+    }
+    @foreach (var mm in m)
+    {
+        <text>@mm.MenuName</text>
+        <ul>
+            @foreach (var mmm in mm.SubMenus)
+            {<text>
+                @mmm.MenuName
+            </text>
+            }
+        </ul>
+    }
+    @String.Join(",", CurrentUser.Roles)
+</div>
+</body>
+</html>

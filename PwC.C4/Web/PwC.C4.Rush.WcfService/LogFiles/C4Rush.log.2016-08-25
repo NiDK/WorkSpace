@@ -1,0 +1,517 @@
+﻿====================================================================
+Date:2016-08-25 23:36:24,153
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[26]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormLayoutList error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Layout_ListForSelect 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormLayout 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterizedCommand(SqlConnection connection, String databaseInstanceName, String commandName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateCommand(SqlConnection connection, String databaseInstanceName, String commandName, Object[] parameterValues)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, Object[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, Object[] parameters)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, Object[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstanceList[T](Database database, String procedureName, RecordMapper`1 recordMapper, Object[] parameters)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormLayoutList() in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 180
+====================================================================
+Date:2016-08-25 23:36:24,153
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormList(int pageSize, int pageIndex, string orderBy, string where, out int totalCount) error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Common_Paging 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateCommand(SqlConnection connection, String databaseInstanceName, String commandName, SqlParameter[] parameterValues)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, SqlParameter[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, SqlParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, SqlParameter[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstanceList[T](Database database, String procedureName, RecordMapper`1 recordMapper, SqlParameter[] parameters)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormList(Int32 pageSize, Int32 pageIndex, String orderBy, String where, Int32& totalCount) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 26
+====================================================================
+Date:2016-08-25 23:36:31,786
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[26]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormLayoutList error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Layout_ListForSelect 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormLayout 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterizedCommand(SqlConnection connection, String databaseInstanceName, String commandName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateCommand(SqlConnection connection, String databaseInstanceName, String commandName, Object[] parameterValues)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, Object[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, Object[] parameters)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, Object[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstanceList[T](Database database, String procedureName, RecordMapper`1 recordMapper, Object[] parameters)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormLayoutList() in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 180
+====================================================================
+Date:2016-08-25 23:36:31,786
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormList(int pageSize, int pageIndex, string orderBy, string where, out int totalCount) error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Common_Paging 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateCommand(SqlConnection connection, String databaseInstanceName, String commandName, SqlParameter[] parameterValues)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, SqlParameter[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, SqlParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstanceList[T](List`1 instanceList, Database database, String procedureName, RecordMapper`1 recordMapper, SqlParameter[] parameters)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstanceList[T](Database database, String procedureName, RecordMapper`1 recordMapper, SqlParameter[] parameters)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormList(Int32 pageSize, Int32 pageIndex, String orderBy, String where, Int32& totalCount) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 26
+====================================================================
+Date:2016-08-25 23:37:29,444
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormBaseInfoByAlias error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Main_GetByAliasName 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterMappedCommand(SqlConnection connection, String databaseInstanceName, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstance[T](Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormBaseInfoByAlias(String alias) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 79
+====================================================================
+Date:2016-08-25 23:37:29,498
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetLayoutHtml error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Layout_GetHtml 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.Database.GetOpenConnection()
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper, OutputParameterMapper outputMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper, OutputParameterMapper outputMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetLayoutHtml(Guid layoutId) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 198
+====================================================================
+Date:2016-08-25 23:40:15,651
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormBaseInfoByAlias error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Main_GetByAliasName 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterMappedCommand(SqlConnection connection, String databaseInstanceName, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstance[T](Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormBaseInfoByAlias(String alias) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 79
+====================================================================
+Date:2016-08-25 23:40:41,511
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormBaseInfoByAlias error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Main_GetByAliasName 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterMappedCommand(SqlConnection connection, String databaseInstanceName, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstance[T](Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormBaseInfoByAlias(String alias) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 79
+====================================================================
+Date:2016-08-25 23:40:41,518
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[52]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://hkapppwv210/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: An operation was attempted on something that is not a socket 10.150.76.31:80
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams)
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-25 23:40:42,002
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetLayoutHtml error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Layout_GetHtml 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.Database.GetOpenConnection()
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper, OutputParameterMapper outputMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper, OutputParameterMapper outputMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetLayoutHtml(Guid layoutId) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 198
+====================================================================
+Date:2016-08-25 23:42:08,261
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormBaseInfoByAlias error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Main_GetByAliasName 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterMappedCommand(SqlConnection connection, String databaseInstanceName, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstance[T](Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormBaseInfoByAlias(String alias) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 79
+====================================================================
+Date:2016-08-25 23:42:57,227
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[39]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://hkapppwv210/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams)
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-25 23:43:22,266
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[35]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://hkapppwv210/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams)
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-25 23:43:22,287
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[27]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://hkapppwv210/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams)
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-25 23:43:22,823
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetFormBaseInfoByAlias error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Main_GetByAliasName 
+ 
+ With context info: Instance type: PwC.C4.Rush.WcfService.Models.FormMain 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.CommandCache.GetCommandCopy(SqlConnection connection, String databaseInstanceName, String procedureName)
+   at PwC.C4.Infrastructure.Data.CommandFactory.CreateParameterMappedCommand(SqlConnection connection, String databaseInstanceName, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.Procedure.Execute(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndHydrateInstance[T](T objectInstance, Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteAndGetInstance[T](Database database, String procedureName, ParameterMapper parameterMapper, RecordMapper`1 recordMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetFormBaseInfoByAlias(String alias) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 79
+====================================================================
+Date:2016-08-25 23:43:22,824
+AppCode:C4Rush
+Exception Type:PwC.C4.Infrastructure.Exceptions.SafeProcedureException
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.FormDao
+Message：GetLayoutHtml error
+PwC.C4.Infrastructure.Exceptions.SafeProcedureException: Database Exception Against Database: dbconn.C4Base 
+ 
+ With procedure: dbo.Form_Layout_GetHtml 
+ 
+ With inner exception message: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication. ---> System.Data.SqlClient.SqlException: Login failed. The login is from an untrusted domain and cannot be used with Windows authentication.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at PwC.C4.Infrastructure.Data.Database.GetOpenConnection()
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper, OutputParameterMapper outputMapper)
+   --- End of inner exception stack trace ---
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper, OutputParameterMapper outputMapper)
+   at PwC.C4.Infrastructure.Data.SafeProcedure.ExecuteScalar(Database database, String procedureName, ParameterMapper parameterMapper)
+   at PwC.C4.Rush.WcfService.Service.Persistance.FormDao.GetLayoutHtml(Guid layoutId) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\FormDao.cs:line 198
+====================================================================
+Date:2016-08-25 23:47:35,515
+AppCode:C4Rush
+Exception Type:System.InvalidOperationException
+Staff Id:(null)
+Thread:[6]
+Level：ERROR
+Class：PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao
+Message：get GetEntity from mongodb error,table name:Form_community,PK Name:RecordId,DataId:579986730439c6670840ef1a,columns:["Content","CreateDate","DStatus","DocumentType","ManagerForApprover_Name","PartnerForAppover_Name","Subject","RecordId"]
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetEntity(String conn, String tableName, String pkName, String dataId, IList`1 properties) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 260
+====================================================================
+Date:2016-08-25 23:49:15,430
+AppCode:C4Rush
+Exception Type:System.InvalidOperationException
+Staff Id:(null)
+Thread:[6]
+Level：ERROR
+Class：PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao
+Message：get GetEntity from mongodb error,table name:Form_community,PK Name:RecordId,DataId:579986730439c6670840ef1a,columns:["Content","CreateDate","DStatus","DocumentType","ManagerForApprover_Name","PartnerForAppover_Name","Subject","RecordId"]
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetEntity(String conn, String tableName, String pkName, String dataId, IList`1 properties) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 260
+====================================================================
+Date:2016-08-25 23:49:36,687
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://hkapppwv210/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-25 23:51:48,513
+AppCode:C4Rush
+Exception Type:System.InvalidOperationException
+Staff Id:(null)
+Thread:[66]
+Level：ERROR
+Class：PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao
+Message：get GetEntity from mongodb error,table name:Form_community,PK Name:RecordId,DataId:579986730439c6670840ef1a,columns:["Content","CreateDate","DStatus","DocumentType","ManagerForApprover_Name","PartnerForAppover_Name","Subject","RecordId"]
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetEntity(String conn, String tableName, String pkName, String dataId, IList`1 properties) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 260
+====================================================================
+Date:2016-08-25 23:51:48,573
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[8]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://hkapppwv210/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---

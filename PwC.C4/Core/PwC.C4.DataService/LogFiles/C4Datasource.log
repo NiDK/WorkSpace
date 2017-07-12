@@ -1,0 +1,1064 @@
+﻿====================================================================
+Date:2016-08-25 14:39:10,327
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:39:20,275
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[42]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:39:30,307
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:39:40,447
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[48]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:39:50,447
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:40:00,541
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:40:10,614
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:40:20,721
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:40:30,684
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[48]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:40:40,910
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[48]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:40:50,906
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:41:01,363
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:41:11,335
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[48]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:41:21,360
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:41:31,382
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:41:41,393
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[42]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:41:51,430
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:42:01,433
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:42:11,447
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[44]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:42:21,531
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:42:32,096
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[42]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:42:41,666
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[41]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:42:51,719
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:43:01,754
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[41]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:43:11,759
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:43:21,752
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:43:31,772
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:43:41,865
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[41]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:43:51,879
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[42]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:44:01,904
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:44:11,888
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:44:21,907
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:44:31,912
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:44:41,921
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:44:51,935
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:45:01,947
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:45:11,949
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:45:21,966
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:45:31,987
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:45:41,998
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:45:52,020
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[41]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:46:02,031
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[43]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:46:12,032
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[41]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:46:22,049
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:46:32,060
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:46:42,111
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:46:52,102
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[41]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:47:02,125
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:47:12,118
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:47:22,150
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:47:32,147
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:47:42,167
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[38]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:47:52,211
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[38]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:48:02,297
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:48:12,363
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:48:22,377
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:48:32,388
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[38]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:48:42,404
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:48:52,418
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:49:02,409
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:49:12,420
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[45]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:49:22,436
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:49:32,455
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:49:42,468
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:49:52,477
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:50:02,487
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[37]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:50:12,488
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:50:22,641
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[36]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:50:32,592
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[36]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:50:42,596
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:50:52,612
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:51:02,617
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:51:12,625
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[37]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:51:22,630
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[40]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:51:32,707
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[37]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---
+====================================================================
+Date:2016-08-25 14:51:42,757
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[37]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: 未能解析此远程名称: 'cnpekappdwv031'
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) 位置 C:\Development\Project\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:行号 251
+   --- 内部异常堆栈跟踪的结尾 ---

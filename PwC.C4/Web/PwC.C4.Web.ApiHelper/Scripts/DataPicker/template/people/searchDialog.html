@@ -1,0 +1,16 @@
+﻿<div class="dpsearch-box">
+    <form class="dpsearch-form">
+        <input class="form-control" placeholder="{{=it.Text}}" id="dp-search-inputbox" type="text">
+        <button class="btn btn-link dpsearch-btn" id="dp-search-go" dpid="{{=it.DpId}}">
+            <i class="glyphicon glyphicon-search"></i>
+        </button>
+    </form>
+</div>
+<div class="dp-serach-dialog-box">
+    <div class="dp-loading-double-bounce">
+        <div class="dp-loading-child dp-loading-double-bounce1"></div>
+        <div class="dp-loading-child dp-loading-double-bounce2"></div>
+    </div>
+    <ul class="list-group dp-serach-dialog-list" style="display: none" id="dp-search-listbox-selected"></ul>
+    <ul class="list-group dp-serach-dialog-list" style="display: none" id="dp-search-listbox-all"></ul>
+</div>

@@ -1,0 +1,316 @@
+﻿====================================================================
+Date:2016-08-04 11:47:40,235
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[55]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 11:50:46,270
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[71]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 11:52:46,357
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[68]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 11:55:06,491
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[81]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 11:56:51,815
+AppCode:C4Rush
+Exception Type:System.ArgumentNullException
+Staff Id:(null)
+Thread:[44]
+Level：ERROR
+Class：PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao
+Message：get GetEntity from mongodb error,table name:Form_frmContract,PK Name:RecordId,DataId:5799a1f7765fcc1a446234a8,columns:["#N_Approver","#N_Partner","#N_Responsible","Alert","ArmazenadoCedoc","AuditTrail","BaseDate","CodAtividade","CodJob","CodProjeto","Company","CompanyContact","ContractObject","ContractValue","CreatedBy","CreatedDate","ExpireDate","Firms","Index","Obs","Recisao","StartDate","Status","Type","Validade","attachments","contractID","contractNumber","RecordId"]
+System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetDatabase(String databaseName) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 40
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetEntity(String conn, String tableName, String pkName, String dataId, IList`1 properties) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 267
+====================================================================
+Date:2016-08-04 11:57:20,522
+AppCode:C4Rush
+Exception Type:System.ArgumentNullException
+Staff Id:(null)
+Thread:[52]
+Level：ERROR
+Class：PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao
+Message：get GetEntity from mongodb error,table name:Form_frmContract,PK Name:RecordId,DataId:5799a1f7765fcc1a446234a8,columns:["#N_Approver","#N_Partner","#N_Responsible","Alert","ArmazenadoCedoc","AuditTrail","BaseDate","CodAtividade","CodJob","CodProjeto","Company","CompanyContact","ContractObject","ContractValue","CreatedBy","CreatedDate","ExpireDate","Firms","Index","Obs","Recisao","StartDate","Status","Type","Validade","attachments","contractID","contractNumber","RecordId"]
+System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetDatabase(String databaseName) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 40
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetEntity(String conn, String tableName, String pkName, String dataId, IList`1 properties) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 267
+====================================================================
+Date:2016-08-04 11:59:26,640
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[48]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 11:59:50,926
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[63]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 12:02:36,589
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[51]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 12:03:36,612
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[83]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 12:08:46,766
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[38]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 12:13:26,964
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[108]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 12:15:27,049
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[64]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 14:27:34,820
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[5]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The request was aborted: The request was canceled.
+   at System.Net.ConnectStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Xml.XmlTextReaderImpl.InitStreamInput(Uri baseUri, String baseUriStr, Stream stream, Byte[] bytes, Int32 byteCount, Encoding encoding)
+   at System.Xml.XmlTextReaderImpl..ctor(String url, Stream input, XmlNameTable nt)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 267
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 14:30:38,133
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[37]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 14:31:50,576
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[37]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 14:41:26,090
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[80]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 14:52:48,796
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[19]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 14:57:20,598
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[39]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 15:00:38,083
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[61]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 15:06:36,780
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[59]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.InvalidOperationException: There is an error in XML document (2, 2). ---> System.Net.WebException: The request was aborted: The connection was closed unexpectedly.
+   at System.Net.ConnectStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Xml.XmlTextReaderImpl.ReadData()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderRemoteConfigSectionCollection.Read3_RemoteConfigSectionCollection(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderRemoteConfigSectionCollection.Read4_RemoteConfigSectionCollection()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 267
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-04 15:06:36,802
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[85]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connect request was made on an already connected socket 10.150.64.41:80
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---

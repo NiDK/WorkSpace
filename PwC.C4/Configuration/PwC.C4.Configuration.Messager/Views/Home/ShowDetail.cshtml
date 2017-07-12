@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ShowDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PwC.C4.Configuration.Messager.Model.ConfigurationDetail
+
+@section scripts
+{
+
+}
+@section styles
+{
+}
+<div>
+    <h2>@Model.ConfigName <span class="title"><strong>@Model.AppCode @Model.Major.@Model.Minor</strong> Create on <ins>@Model.CreateTime.ToString("yy/MM/dd")</ins> by <em>@Model.Creator</em></span></h2>
+    
+    <pre> <code>@MvcHtmlString.Create(Model.Xml)</code></pre>
+   
+</div>

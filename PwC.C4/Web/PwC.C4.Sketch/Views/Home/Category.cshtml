@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+@using PwC.C4.Sketch.Service.Module
+@model List<PwC.C4.DataService.Model.HtmlCategory>
+@{
+    var html = new HtmlString(CategoryRender.GetCategory(Model));
+}
+@html
+<script type="text/javascript">
+            $(function () {
+                $(".nlink").click(function() {
+                    var $aaaul = $(this).siblings(".main");
+                    if ($aaaul.is(":visible")) {
+                        $(this).parent().attr("class", "collapsed");
+                        $(this).attr("class", "collapsedLink nlink");
+                        $aaaul.hide();
+                    } else {
+                        $(this).parent().attr("class", "expanded");
+                        $(this).attr("class", "expandedLink nlink");
+                        $aaaul.show();
+                    }
+                    return false;
+                });
+            });
+
+    </script>

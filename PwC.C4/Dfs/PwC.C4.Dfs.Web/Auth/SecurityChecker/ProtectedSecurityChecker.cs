@@ -1,0 +1,45 @@
+﻿using System.Web;
+using PwC.C4.Dfs.Client.Helper;
+using PwC.C4.Dfs.Common.Config;
+using PwC.C4.Dfs.Common.Model.Enums;
+
+namespace PwC.C4.Dfs.Web.Auth.SecurityChecker
+{
+    public class ProtectedSecurityChecker : SecurityChecker
+    {
+        private readonly PrivateSecurityChecker privateChecker = new PrivateSecurityChecker();
+
+        public override SecurityVerifyResult CheckSecurity(HttpContext       context, 
+                                                           string            url,
+                                                           string appCode,
+                                                           SignatureContext  signatureContext,
+                                                           out SecurityLevel securityLevel)
+        {
+            var result = privateChecker.CheckSecurity(context, url, appCode, signatureContext, out securityLevel);
+            if (result == SecurityVerifyResult.Success)
+            {
+                return result;
+            }
+
+            if (SecurityPolicy.ExpirationEnabled(signatureContext.SecurityPolicy))
+            {
+                var time = DateTimeUtility.FromTimestamp(signatureContext.Timestamp);
+                var diff = DateTimeUtility.Now - time;
+
+                if (diff.TotalMinutes > DfsConfig.Instance.SignatureLifetimeMinutes)
+                {
+                    return SecurityVerifyResult.Expired;
+                }
+            }
+
+            if (signatureContext.HasEmail || signatureContext.HasAppCode)
+            {
+                securityLevel = SecurityLevel.Protected;
+                return SecurityVerifyResult.Success;
+            }
+
+            securityLevel = SecurityLevel.Public;
+            return SecurityVerifyResult.RequiredParameterNotFound;
+        }
+    }
+}

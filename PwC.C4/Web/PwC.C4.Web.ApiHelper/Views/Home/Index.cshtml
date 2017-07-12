@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        PwC C4 API Helper
+    </title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/DataPicker/template/people/styles.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/patch.css" rel="stylesheet" />
+    <link href="~/Content/docs.min.css" rel="stylesheet" />
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+    <link href="~/Content/hl-default.css" rel="stylesheet" />
+    <script src="~/Scripts/highlight.pack.js"></script>
+    <!--[if lt IE 9]><script src="~/Scripts/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/html5shiv.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+
+     <![endif]-->
+
+</head>
+<body>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../" class="navbar-brand">PwC C4 API Helper</a>
+            </div>
+            <nav id="bs-navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@Url.Action("DataPicker")">DataPicker</a>
+                    </li>
+                    <li><a href="@Url.Action("PeoplePicker")">PeoplePicker-Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+        <div class="container">
+            <h1>PwC C4 API helper</h1>
+            <p>PwC C4 API helper Collection</p>
+        </div>
+    </div>
+
+
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+            <p>© 2016 PwC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/docs.min.js"></script>
+    <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

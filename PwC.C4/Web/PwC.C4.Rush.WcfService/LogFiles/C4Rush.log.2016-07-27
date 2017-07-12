@@ -1,0 +1,484 @@
+﻿====================================================================
+Date:2016-07-27 13:36:44,154
+AppCode:C4Rush
+Exception Type:System.InvalidOperationException
+Staff Id:(null)
+Thread:[62]
+Level：ERROR
+Class：PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao
+Message：get GetEntity from mongodb error,table name:Form_Revenue_Code,PK Name:RecordId,DataId:LinkTracking,columns:["CCCnumber","body","info","number","section","subject","type","RecordId"]
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at PwC.C4.Metadata.Storage.MongoDb.Persistance.CommonDataDao.GetEntity(String conn, String tableName, String pkName, String dataId, IList`1 properties) in C:\Development\Projects\Base\PwC.C4\Metadata\PwC.C4.Metadata.Storage\MongoDB\Persistance\CommonDataDao.cs:line 274
+====================================================================
+Date:2016-07-27 14:05:37,809
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[124]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: An operation was attempted on something that is not a socket 10.157.21.88:80
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-27 14:24:37,403
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[191]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to download 'http://CNPEKAPPDWV031/PwC.Configuration/Download/ConnectionStrings/General/1/ConnectionStrings.53' to 'c:\PwC.C4.configs\C4Rush\ConnectionStrings.config' ---> System.IO.IOException: Cannot create a file when that file already exists.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalMove(String sourceFileName, String destFileName, Boolean checkHost)
+   at PwC.C4.Configuration.RemoteConfigurationManager.Download(String resourceName, String url, String targetPath, DownloadChecker checker) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 347
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-27 15:14:39,161
+AppCode:C4Rush
+Exception Type:System.TimeoutException
+Staff Id:(null)
+Thread:[44]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao
+Message：GetLinkTrackingUrl error,url:Notes://TH-BKKHub001/48257FF70023B65E/476AA341F9FB9EF847256D2C0029B260/4DE32E858B9F163B47256D2E0034C6DF
+System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode = Primary, TagSets = [] } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/hkdbsdwv002:29031" }", EndPoint: "Unspecified/hkdbsdwv002:29031", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> MongoDB.Driver.MongoAuthenticationException: Unable to authenticate using sasl protocol mechanism SCRAM-SHA-1. ---> MongoDB.Driver.MongoCommandException: Command saslStart failed: Authentication failed..
+   at MongoDB.Driver.Core.WireProtocol.CommandWireProtocol`1.ProcessReply(ConnectionId connectionId, ReplyMessage`1 reply)
+   at MongoDB.Driver.Core.WireProtocol.CommandWireProtocol`1.<ExecuteAsync>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Authentication.SaslAuthenticator.<AuthenticateAsync>d__7.MoveNext()
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Authentication.SaslAuthenticator.<AuthenticateAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Authentication.AuthenticationHelper.<AuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.ConnectionInitializer.<InitializeConnectionAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__47.MoveNext()
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__47.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.<HeartbeatAsync>d__42.MoveNext()" }] }.
+   at MongoDB.Driver.Linq.MongoQueryProviderImpl`1.Execute(Expression expression)
+   at MongoDB.Driver.Linq.MongoQueryableImpl`2.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao.GetLinkTrackingUrl(String notesUrl) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\LinkTrackingDao.cs:line 45
+====================================================================
+Date:2016-07-27 15:16:06,943
+AppCode:C4Rush
+Exception Type:System.TimeoutException
+Staff Id:(null)
+Thread:[44]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao
+Message：GetLinkTrackingUrl error,url:Notes://TH-BKKHub001/48257FF70023B65E/476AA341F9FB9EF847256D2C0029B260/4DE32E858B9F163B47256D2E0034C6DF
+System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode = Primary, TagSets = [] } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/hkdbsdwv002:29031" }", EndPoint: "Unspecified/hkdbsdwv002:29031", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> MongoDB.Driver.MongoAuthenticationException: Unable to authenticate using sasl protocol mechanism SCRAM-SHA-1. ---> MongoDB.Driver.MongoCommandException: Command saslStart failed: Authentication failed..
+   at MongoDB.Driver.Core.WireProtocol.CommandWireProtocol`1.ProcessReply(ConnectionId connectionId, ReplyMessage`1 reply)
+   at MongoDB.Driver.Core.WireProtocol.CommandWireProtocol`1.<ExecuteAsync>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Authentication.SaslAuthenticator.<AuthenticateAsync>d__7.MoveNext()
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Authentication.SaslAuthenticator.<AuthenticateAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Authentication.AuthenticationHelper.<AuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.ConnectionInitializer.<InitializeConnectionAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__47.MoveNext()
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__47.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.<HeartbeatAsync>d__42.MoveNext()" }] }.
+   at MongoDB.Driver.Linq.MongoQueryProviderImpl`1.Execute(Expression expression)
+   at MongoDB.Driver.Linq.MongoQueryableImpl`2.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao.GetLinkTrackingUrl(String notesUrl) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\LinkTrackingDao.cs:line 45
+====================================================================
+Date:2016-07-27 15:29:15,558
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[27]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-07-27 15:29:15,558
+AppCode:C4Rush
+Exception Type:System.AggregateException
+Staff Id:(null)
+Thread:[194]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao
+Message：GetLinkTrackingUrl error,url:Notes://TH-BKKHub001/48257FF70023B65E/476AA341F9FB9EF847256D2C0029B260/4DE32E858B9F163B47256D2E0034C6DF
+System.AggregateException: One or more errors occurred. ---> System.FormatException: Element 'NotesDocID' does not match any field or property of class PwC.C4.Rush.WcfService.Models.LinkTracking.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao.GetLinkTrackingUrl(String notesUrl) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\LinkTrackingDao.cs:line 48
+---> (Inner Exception #0) System.FormatException: Element 'NotesDocID' does not match any field or property of class PwC.C4.Rush.WcfService.Models.LinkTracking.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()<---
+
+====================================================================
+Date:2016-07-27 15:33:18,162
+AppCode:C4Rush
+Exception Type:System.AggregateException
+Staff Id:(null)
+Thread:[214]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao
+Message：GetLinkTrackingUrl error,url:Notes://TH-BKKHub001/48257FF70023B65E/476AA341F9FB9EF847256D2C0029B260/4DE32E858B9F163B47256D2E0034C6DF
+System.AggregateException: One or more errors occurred. ---> System.FormatException: Element 'FormName' does not match any field or property of class PwC.C4.Rush.WcfService.Models.ApplicationCodeWebServer.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao.GetLinkTrackingUrl(String notesUrl) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\LinkTrackingDao.cs:line 52
+---> (Inner Exception #0) System.FormatException: Element 'FormName' does not match any field or property of class PwC.C4.Rush.WcfService.Models.ApplicationCodeWebServer.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()<---
+
+====================================================================
+Date:2016-07-27 15:33:50,968
+AppCode:C4Rush
+Exception Type:System.AggregateException
+Staff Id:(null)
+Thread:[226]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao
+Message：GetLinkTrackingUrl error,url:Notes://TH-BKKHub001/48257FF70023B65E/476AA341F9FB9EF847256D2C0029B260/4DE32E858B9F163B47256D2E0034C6DF
+System.AggregateException: One or more errors occurred. ---> System.FormatException: Element 'FormName' does not match any field or property of class PwC.C4.Rush.WcfService.Models.ApplicationCodeWebServer.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao.GetLinkTrackingUrl(String notesUrl) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\LinkTrackingDao.cs:line 52
+---> (Inner Exception #0) System.FormatException: Element 'FormName' does not match any field or property of class PwC.C4.Rush.WcfService.Models.ApplicationCodeWebServer.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()<---
+
+====================================================================
+Date:2016-07-27 15:35:15,235
+AppCode:C4Rush
+Exception Type:System.AggregateException
+Staff Id:(null)
+Thread:[245]
+Level：ERROR
+Class：PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao
+Message：GetLinkTrackingUrl error,url:Notes://TH-BKKHub001/48257FF70023B65E/476AA341F9FB9EF847256D2C0029B260/4DE32E858B9F163B47256D2E0034C6DF
+System.AggregateException: One or more errors occurred. ---> System.FormatException: Element 'FormName' does not match any field or property of class PwC.C4.Rush.WcfService.Models.ApplicationCodeWebServer.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PwC.C4.Rush.WcfService.Service.Persistance.LinkTrackingDao.GetLinkTrackingUrl(String notesUrl) in C:\Development\Projects\Base\PwC.C4\Web\PwC.C4.Rush.WcfService\Service\Persistance\LinkTrackingDao.cs:line 52
+---> (Inner Exception #0) System.FormatException: Element 'FormName' does not match any field or property of class PwC.C4.Rush.WcfService.Models.ApplicationCodeWebServer.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.ReplyMessageBinaryEncoder`1.ReadMessage()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveMessageHelper.DecodeMessage(IByteBuffer buffer, IMessageEncoderSelector encoderSelector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<ReceiveMessageAsync>d__53.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.WireProtocol.QueryWireProtocol`1.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ClusterableServer.ServerChannel.<ExecuteProtocolAsync>d__26`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOpcodeOperation`1.<ExecuteAsync>d__94.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__107.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__59`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.<ToListAsync>d__16`1.MoveNext()<---
+
+====================================================================
+Date:2016-07-27 18:14:46,157
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[238]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://CNPEKAPPDWV031/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---

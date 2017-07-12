@@ -1,0 +1,9 @@
+﻿<Application x:Class="PwC.C4.Tools.ServiceDiagnostic.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PwC.C4.Tools.ServiceDiagnostic"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

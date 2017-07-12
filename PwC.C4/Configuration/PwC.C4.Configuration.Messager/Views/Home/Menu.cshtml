@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using PwC.C4.Infrastructure.Config
+@using PwC.C4.Membership
+@using PwC.C4.Metadata.Service
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Remote configuration settings", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                @{
+                    var menu = HtmlCategoryService.Instance().GetHtmlCategory_ListByAppCode("menu", CurrentUser.Roles.ToList());
+                }
+                @foreach (var m in menu)
+                {
+                    <li>
+                        <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@m.Url">@m.DisplayName</a>
+                        @if (m.SubCategories != null && m.SubCategories.Any())
+                        {
+                            <ul class="dropdown-menu">
+                                @foreach (var h in m.SubCategories)
+                                {
+                                    <li>
+                                        <a href="/@(AppSettings.Instance.GetAppVirtualDirectory())@h.Url">@h.DisplayName</a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </li>
+                }
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Hi,@CurrentUser.StaffName</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</div>

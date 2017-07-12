@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFF517D2-7442-434B-A83C-E5391D4D4992}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PwC.C4.Infrastructure</RootNamespace>
+    <AssemblyName>PwC.C4.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Nuget|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Nuget\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PwC.C4.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
+    <Compile Include="Attributes\EnumeDataFieldNameAttribute.cs" />
+    <Compile Include="Attributes\EnumeDisplayAttribute.cs" />
+    <Compile Include="Attributes\EnumeExplainAttribute.cs" />
+    <Compile Include="Attributes\EnumeIndexFieldNameAttribute.cs" />
+    <Compile Include="Attributes\EnumLableAttribute.cs" />
+    <Compile Include="Config\AppSettings.cs" />
+    <Compile Include="Config\AppSettingsExtension.cs" />
+    <Compile Include="Config\ConstValues.cs" />
+    <Compile Include="Config\SettingGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\SettingNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\XmlSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\CommandCache.cs" />
+    <Compile Include="Data\CommandFactory.cs" />
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\DataRecord.cs" />
+    <Compile Include="Data\DebugUtil.cs" />
+    <Compile Include="Exceptions\NoConntectNameException.cs" />
+    <Compile Include="Exceptions\BadDataException.cs" />
+    <Compile Include="Exceptions\DatabaseExecutionException.cs" />
+    <Compile Include="Exceptions\DataException.cs" />
+    <Compile Include="Exceptions\DataNotFoundException.cs" />
+    <Compile Include="Exceptions\SafeProcedureException.cs" />
+    <Compile Include="Exceptions\SqlParameterException.cs" />
+    <Compile Include="Exceptions\StandardExceptions.cs" />
+    <Compile Include="Data\IParameterSet.cs" />
+    <Compile Include="Data\MapperDelegates\RecordMapper.cs" />
+    <Compile Include="Data\Procedure.cs" />
+    <Compile Include="Data\SafeProcedure.cs" />
+    <Compile Include="Data\SafeProcedureAsync.cs" />
+    <Compile Include="Data\SqlHelper.cs" />
+    <Compile Include="Data\StoredProcedureParameter.cs" />
+    <Compile Include="Data\StoredProcedureParameterList.cs" />
+    <Compile Include="Helper\ArgumentHelper.cs" />
+    <Compile Include="Helper\DataTableHelper.cs" />
+    <Compile Include="Helper\DictionaryHelper.cs" />
+    <Compile Include="Helper\DirectoryItemsHandler\DirectoryItemHandler.cs" />
+    <Compile Include="Helper\DirectoryItemsHandler\FileSystemItemTypes.cs" />
+    <Compile Include="Helper\DirectoryItemsHandler\FileSystemIterator.cs" />
+    <Compile Include="Helper\DirectoryItemsHandler\PositionalTextReader.cs" />
+    <Compile Include="Helper\EncodingHelper.cs" />
+    <Compile Include="Helper\EncryptHelper.cs" />
+    <Compile Include="Helper\EnumHelper.cs" />
+    <Compile Include="Helper\EqualityComparer.cs" />
+    <Compile Include="Helper\HttpContextHelper.cs" />
+    <Compile Include="Helper\JsHelper.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Helper\NLP\Chinese\ChineseConvertHelper.cs" />
+    <Compile Include="Helper\NLP\Chinese\ChineseDict.cs" />
+    <Compile Include="Helper\NLP\Pinyin\PingYinConvertHelper.cs" />
+    <Compile Include="Helper\NLP\Pinyin\PingYinDict.cs" />
+    <Compile Include="Helper\NLP\Pinyin\PingYinModel.cs" />
+    <Compile Include="Helper\PropertyHelper.cs" />
+    <Compile Include="Helper\SocketHelper.cs" />
+    <Compile Include="Helper\StreamHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\StringOperate.cs" />
+    <Compile Include="Helper\ThesaurusHelper.cs" />
+    <Compile Include="Helper\TypeHelper.cs" />
+    <Compile Include="BaseLogger\LogWrapper.cs" />
+    <Compile Include="Model\Enum\ErrorStatus.cs" />
+    <Compile Include="Model\MailQueueEntity.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebExtension\ControllerExtension.cs" />
+    <Compile Include="WebExtension\DownloadResult.cs" />
+    <Compile Include="WebExtension\DtGridModel.cs" />
+    <Compile Include="WebExtension\DynamicContractResolver.cs" />
+    <Compile Include="WebExtension\ErrorDispatchAttribute.cs" />
+    <Compile Include="WebExtension\FastJsonResult.cs" />
+    <Compile Include="WebExtension\FromJsonAttribute.cs" />
+    <Compile Include="WebExtension\JsonBinder.cs" />
+    <Compile Include="WebExtension\JsonpViewResult.cs" />
+    <Compile Include="WebExtension\RestApiResultModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\BlackDict.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Config\AppSettings.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\NLP\Chinese\ChineseDict.config" />
+    <None Include="Helper\NLP\Pinyin\PingYinDict.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

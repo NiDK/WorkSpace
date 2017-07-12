@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D05594D-EB47-4677-8F77-3FFCF217B09F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PwC.C4.Metadata</RootNamespace>
+    <AssemblyName>PwC.C4.Metadata</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Nuget|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Nuget\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\packages\ClosedXML.0.76.0\lib\net40-client\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PwC.C4.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Infrastructure, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Infrastructure.Cache, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Infrastructure.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="PwC.C4.Infrastructure.Logger, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_ExternalReferences\PwC.C4.Infrastructure.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\CustomMetaColumnAttribute.cs" />
+    <Compile Include="Attributes\MetaColumnAttribute.cs" />
+    <Compile Include="Attributes\MetaObjectAttribute.cs" />
+    <Compile Include="Config\MetadataEntityWorkflow.cs" />
+    <Compile Include="Exceptions\MetadataColumnNotExistException.cs" />
+    <Compile Include="Exceptions\TranslatorException.cs" />
+    <Compile Include="Exceptions\GetDatasourceException.cs" />
+    <Compile Include="Interface\IHtmlCategoryService.cs" />
+    <Compile Include="Interface\IHtmlSnippetService.cs" />
+    <Compile Include="Interface\IPackageService.cs" />
+    <Compile Include="Interface\IExcelManageService.cs" />
+    <Compile Include="Model\Attachment.cs" />
+    <Compile Include="Model\Const\CacheTypeMiddleWord.cs" />
+    <Compile Include="Model\Const\SearchItemParameters.cs" />
+    <Compile Include="Model\DataCommonApiModel.cs" />
+    <Compile Include="Model\EntitySearchColumn.cs" />
+    <Compile Include="Model\EntityConfigColumn.cs" />
+    <Compile Include="Config\MetadataEntity.cs" />
+    <Compile Include="Config\MetadataEntityColumnProperty.cs" />
+    <Compile Include="Config\MetadataEntityColumn.cs" />
+    <Compile Include="Config\MetadataSettings.cs" />
+    <Compile Include="Config\MetadataSettingsExtension.cs" />
+    <Compile Include="Config\ConfigExpand.cs" />
+    <Compile Include="Exceptions\NoMetadataEntityException.cs" />
+    <Compile Include="Interface\IColumnService.cs" />
+    <Compile Include="Interface\IDatasource.cs" />
+    <Compile Include="Interface\IDatasourceService.cs" />
+    <Compile Include="Metadata\MetadataHelper.cs" />
+    <Compile Include="Model\EntityColumn.cs" />
+    <Compile Include="Model\EntityTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Enum\BaseControlType.cs" />
+    <Compile Include="Model\Enum\EntityUpdateState.cs" />
+    <Compile Include="Model\Enum\OrderMethod.cs" />
+    <Compile Include="Metadata\DynamicMetadata.cs" />
+    <Compile Include="Metadata\DynamicMetadataContractResolver.cs" />
+    <Compile Include="Metadata\DynamicMetadataConverter.cs" />
+    <Compile Include="Metadata\DynamicMetadataTranslator.cs" />
+    <Compile Include="Model\Enum\DataSourceType.cs" />
+    <Compile Include="Model\SearchItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DataSourceContext.cs" />
+    <Compile Include="Service\HtmlCategoryService.cs" />
+    <Compile Include="Service\HtmlSnippetService.cs" />
+    <Compile Include="WcfClient\C4DataService.cs" />
+    <Compile Include="Service\PackageService.cs" />
+    <Compile Include="Service\ColumnService.cs" />
+    <Compile Include="Service\DatasourceService.cs" />
+    <Compile Include="Service\ExcelManageService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Config\Metadata-Settings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

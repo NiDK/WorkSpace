@@ -1,0 +1,467 @@
+﻿====================================================================
+Date:2016-08-03 15:17:03,225
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[7]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 251
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-03 15:21:48,875
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[5]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-03 15:21:48,889
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[26]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The operation has timed out
+   at System.Net.HttpWebRequest.GetResponse()
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 263
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-03 15:22:51,422
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[25]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：vProfile verify failed!status code:InvalidToken
+====================================================================
+Date:2016-08-03 15:22:54,900
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[25]
+Level：ERROR
+Class：PwC.C4.Membership.C4HttpModule
+Message：(HttpContext.Current.User == null || !HttpContext.Current.User.Identity.IsAuthenticated,Login Url:http://localhost/C4Rush/Admin/Home/Index?ServiceTicket=RGFiL09Hait6RGZSVDMwSlRzT2tQNHNCYlJIeklaNVlpdElTRjJlUVFVMys2R3FLZzMzcHB3PT0=
+====================================================================
+Date:2016-08-03 15:23:12,916
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[25]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：GetCurrentUser error,oasc:
+====================================================================
+Date:2016-08-03 15:23:20,963
+AppCode:C4Rush
+Exception Type:System.NullReferenceException
+Staff Id:(null)
+Thread:[25]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：StaffName is Null
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at PwC.C4.Membership.vProfile.UserProvider.StaffName() in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 59
+====================================================================
+Date:2016-08-03 15:23:20,964
+AppCode:C4Rush
+Exception Type:System.ServiceModel.ProtocolException
+Staff Id:(null)
+Thread:[25]
+Level：ERROR
+Class：PwC.C4.Membership.WebExtension.C4Controller
+Message：Action Name:Index,Controller Name:Home,System Error, StaffId:,StaffName:No current user
+System.ServiceModel.ProtocolException: The content type text/html of the response message does not match the content type of the binding (text/xml; charset=utf-8). If using a custom encoder, be sure that the IsContentTypeSupported method is implemented properly. The first 75 bytes of the response were: 'The page cannot be displayed because an internal server error has occurred.'. ---> System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at IC4MembershipService.CheckFunctionRight(FunctionCheck functionCheck)
+   at C4MembershipServiceClient.CheckFunctionRight(FunctionCheck functionCheck) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WcfClient\C4MembershipService.cs:line 203
+   at PwC.C4.Membership.Service.MembershipService.FunctionCheck(String area, String controller, String action, String url, List`1 roles) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\Service\MembershipService.cs:line 60
+   at PwC.C4.Membership.WebExtension.C4Controller.OnAuthorization(AuthorizationContext filterContext) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WebExtension\C4Controller.cs:line 65
+====================================================================
+Date:2016-08-03 15:33:49,395
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[46]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：vProfile verify failed!status code:InvalidToken
+====================================================================
+Date:2016-08-03 15:33:49,396
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[46]
+Level：ERROR
+Class：PwC.C4.Membership.C4HttpModule
+Message：(HttpContext.Current.User == null || !HttpContext.Current.User.Identity.IsAuthenticated,Login Url:http://localhost/C4Rush/Admin/Home/Index?ServiceTicket=L0JicFJJc0krMm85VkNNNHlrUkZhYWY2VXFrOFk4ODJ4SHFDVWxLZEhCVE1mWkZvenpxZkpnPT0=
+====================================================================
+Date:2016-08-03 15:34:55,492
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[46]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：GetCurrentUser error,oasc:
+====================================================================
+Date:2016-08-03 15:41:55,758
+AppCode:C4Rush
+Exception Type:System.NullReferenceException
+Staff Id:(null)
+Thread:[46]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：StaffName is Null
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at PwC.C4.Membership.vProfile.UserProvider.StaffName() in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 59
+====================================================================
+Date:2016-08-03 15:41:55,763
+AppCode:C4Rush
+Exception Type:System.ServiceModel.ProtocolException
+Staff Id:(null)
+Thread:[46]
+Level：ERROR
+Class：PwC.C4.Membership.WebExtension.C4Controller
+Message：Action Name:Index,Controller Name:Home,System Error, StaffId:,StaffName:No current user
+System.ServiceModel.ProtocolException: The content type text/html of the response message does not match the content type of the binding (text/xml; charset=utf-8). If using a custom encoder, be sure that the IsContentTypeSupported method is implemented properly. The first 75 bytes of the response were: 'The page cannot be displayed because an internal server error has occurred.'. ---> System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at IC4MembershipService.CheckFunctionRight(FunctionCheck functionCheck)
+   at C4MembershipServiceClient.CheckFunctionRight(FunctionCheck functionCheck) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WcfClient\C4MembershipService.cs:line 203
+   at PwC.C4.Membership.Service.MembershipService.FunctionCheck(String area, String controller, String action, String url, List`1 roles) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\Service\MembershipService.cs:line 60
+   at PwC.C4.Membership.WebExtension.C4Controller.OnAuthorization(AuthorizationContext filterContext) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WebExtension\C4Controller.cs:line 65
+====================================================================
+Date:2016-08-03 16:08:15,134
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[19]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.Net.WebException: The request was aborted: The request was canceled.
+   at System.Net.ConnectStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Xml.XmlTextReaderImpl.InitStreamInput(Uri baseUri, String baseUriStr, Stream stream, Byte[] bytes, Int32 byteCount, Encoding encoding)
+   at System.Xml.XmlTextReaderImpl..ctor(String url, Stream input, XmlNameTable nt)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 267
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-03 16:11:40,358
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：vProfile verify failed!status code:InvalidToken
+====================================================================
+Date:2016-08-03 16:11:40,364
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.C4HttpModule
+Message：(HttpContext.Current.User == null || !HttpContext.Current.User.Identity.IsAuthenticated,Login Url:http://localhost/C4Rush/Admin/Home/Index?ServiceTicket=MGxFZWxmWklTUlp0UDUzanQ5cU82VW5lRjdsR1NHVEo2Z01QZjdaTXk0NzdzanNGNzRKNzBnPT0=
+====================================================================
+Date:2016-08-03 16:11:40,368
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：GetCurrentUser error,oasc:
+====================================================================
+Date:2016-08-03 16:11:40,471
+AppCode:C4Rush
+Exception Type:System.NullReferenceException
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：StaffName is Null
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at PwC.C4.Membership.vProfile.UserProvider.StaffName() in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 59
+====================================================================
+Date:2016-08-03 16:11:40,472
+AppCode:C4Rush
+Exception Type:System.ServiceModel.ProtocolException
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.WebExtension.C4Controller
+Message：Action Name:Index,Controller Name:Home,System Error, StaffId:,StaffName:No current user
+System.ServiceModel.ProtocolException: The content type text/html of the response message does not match the content type of the binding (text/xml; charset=utf-8). If using a custom encoder, be sure that the IsContentTypeSupported method is implemented properly. The first 75 bytes of the response were: 'The page cannot be displayed because an internal server error has occurred.'. ---> System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at IC4MembershipService.CheckFunctionRight(FunctionCheck functionCheck)
+   at C4MembershipServiceClient.CheckFunctionRight(FunctionCheck functionCheck) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WcfClient\C4MembershipService.cs:line 203
+   at PwC.C4.Membership.Service.MembershipService.FunctionCheck(String area, String controller, String action, String url, List`1 roles) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\Service\MembershipService.cs:line 60
+   at PwC.C4.Membership.WebExtension.C4Controller.OnAuthorization(AuthorizationContext filterContext) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WebExtension\C4Controller.cs:line 74
+====================================================================
+Date:2016-08-03 16:12:00,078
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[49]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：vProfile verify failed!status code:InvalidToken
+====================================================================
+Date:2016-08-03 16:12:00,078
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[49]
+Level：ERROR
+Class：PwC.C4.Membership.C4HttpModule
+Message：(HttpContext.Current.User == null || !HttpContext.Current.User.Identity.IsAuthenticated,Login Url:http://localhost/C4Rush/Admin/Home/Index?ServiceTicket=MGxFZWxmWklTUlp0UDUzanQ5cU82VW5lRjdsR1NHVEo2Z01QZjdaTXk0NzdzanNGNzRKNzBnPT0=&ServiceTicket=eWJydW5UcEtDWTd3MlJ5ekdteEN4dE1GQjl1UzhFWXlYNFh1VktzVk03Zi9aeUtndXRCOVN3PT0=
+====================================================================
+Date:2016-08-03 16:12:00,083
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[49]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：GetCurrentUser error,oasc:
+====================================================================
+Date:2016-08-03 16:12:00,193
+AppCode:C4Rush
+Exception Type:System.NullReferenceException
+Staff Id:(null)
+Thread:[49]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：StaffName is Null
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at PwC.C4.Membership.vProfile.UserProvider.StaffName() in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 59
+====================================================================
+Date:2016-08-03 16:12:00,194
+AppCode:C4Rush
+Exception Type:System.ServiceModel.ProtocolException
+Staff Id:(null)
+Thread:[49]
+Level：ERROR
+Class：PwC.C4.Membership.WebExtension.C4Controller
+Message：Action Name:Index,Controller Name:Home,System Error, StaffId:,StaffName:No current user
+System.ServiceModel.ProtocolException: The content type text/html of the response message does not match the content type of the binding (text/xml; charset=utf-8). If using a custom encoder, be sure that the IsContentTypeSupported method is implemented properly. The first 75 bytes of the response were: 'The page cannot be displayed because an internal server error has occurred.'. ---> System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at IC4MembershipService.CheckFunctionRight(FunctionCheck functionCheck)
+   at C4MembershipServiceClient.CheckFunctionRight(FunctionCheck functionCheck) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WcfClient\C4MembershipService.cs:line 203
+   at PwC.C4.Membership.Service.MembershipService.FunctionCheck(String area, String controller, String action, String url, List`1 roles) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\Service\MembershipService.cs:line 60
+   at PwC.C4.Membership.WebExtension.C4Controller.OnAuthorization(AuthorizationContext filterContext) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WebExtension\C4Controller.cs:line 74
+====================================================================
+Date:2016-08-03 17:18:02,899
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：vProfile verify failed!status code:InvalidToken
+====================================================================
+Date:2016-08-03 17:18:02,927
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.C4HttpModule
+Message：(HttpContext.Current.User == null || !HttpContext.Current.User.Identity.IsAuthenticated,Login Url:http://localhost/C4Rush/Admin/Home/Index?ServiceTicket=Nzh6cjNkT3RqR2x5VlordWQ1NU1YeEJ4UkkweFM4Y2p4UTIzRFNKMFpCTWZoY2RGNE1lVnJBPT0=
+====================================================================
+Date:2016-08-03 17:18:02,932
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：GetCurrentUser error,oasc:
+====================================================================
+Date:2016-08-03 17:18:25,039
+AppCode:C4Rush
+Exception Type:System.NullReferenceException
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：StaffName is Null
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at PwC.C4.Membership.vProfile.UserProvider.StaffName() in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 59
+====================================================================
+Date:2016-08-03 17:18:25,086
+AppCode:C4Rush
+Exception Type:System.NotSupportedException
+Staff Id:(null)
+Thread:[34]
+Level：ERROR
+Class：PwC.C4.Membership.WebExtension.C4Controller
+Message：Action Name:Index,Controller Name:Home,System Error, StaffId:,StaffName:No current user
+System.NotSupportedException: Collection is read-only.
+   at System.Collections.Specialized.NameObjectCollectionBase.BaseRemove(String name)
+   at PwC.C4.Membership.vProfile.UserProvider.Redirect2LoginPage(HttpContextBase contextBase) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 303
+   at PwC.C4.Membership.WebExtension.C4Controller.OnAuthorization(AuthorizationContext filterContext) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WebExtension\C4Controller.cs:line 51
+====================================================================
+Date:2016-08-03 17:56:45,537
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[31]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：vProfile verify failed!status code:InvalidToken
+====================================================================
+Date:2016-08-03 17:56:45,567
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[31]
+Level：ERROR
+Class：PwC.C4.Membership.C4HttpModule
+Message：(HttpContext.Current.User == null || !HttpContext.Current.User.Identity.IsAuthenticated,Login Url:http://localhost/C4Rush/Admin/Home/Index?ServiceTicket=MVR0MkpZTnhXc0VkdGExMlZnOFBRSlpaOTk2VHpUZUZxQW5EQzh1U0M0a1FJMGtQNTlFSyt3PT0=
+====================================================================
+Date:2016-08-03 17:56:45,572
+AppCode:C4Rush
+Exception Type:(null)
+Staff Id:(null)
+Thread:[31]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：GetCurrentUser error,oasc:
+====================================================================
+Date:2016-08-03 17:56:51,182
+AppCode:(null)
+Exception Type:(null)
+Staff Id:(null)
+Thread:[17]
+Level：ERROR
+Class：PwC.C4.Configuration.BaseConfigurationManager
+Message：ConfigurationManager
+System.Configuration.ConfigurationErrorsException: Unabled to GetServerVersions from 'http://HKAPPUWV190/PwC.Configuration/ConfigVersionHandler.ashx' ---> System.InvalidOperationException: There is an error in XML document (2, 2). ---> System.Net.WebException: The request was aborted: The connection was closed unexpectedly.
+   at System.Net.ConnectStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Xml.XmlTextReaderImpl.ReadData()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderRemoteConfigSectionCollection.Read3_RemoteConfigSectionCollection(Boolean isNullable, Boolean checkType)
+   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderRemoteConfigSectionCollection.Read4_RemoteConfigSectionCollection()
+   --- End of inner exception stack trace ---
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(Stream stream)
+   at PwC.C4.Configuration.RemoteConfigurationManager.GetServerVersions(RemoteConfigSectionCollection lstInputParams) in C:\Development\Projects\Base\PwC.C4\Configuration\PwC.C4.Configuration\RemoteConfigurationManager.cs:line 267
+   --- End of inner exception stack trace ---
+====================================================================
+Date:2016-08-03 17:57:12,936
+AppCode:C4Rush
+Exception Type:System.NullReferenceException
+Staff Id:(null)
+Thread:[31]
+Level：ERROR
+Class：PwC.C4.Membership.vProfile.UserProvider
+Message：StaffName is Null
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at PwC.C4.Membership.vProfile.UserProvider.StaffName() in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\vProfile\UserProvider.cs:line 60
+====================================================================
+Date:2016-08-03 17:57:12,937
+AppCode:C4Rush
+Exception Type:System.ServiceModel.ProtocolException
+Staff Id:(null)
+Thread:[31]
+Level：ERROR
+Class：PwC.C4.Membership.WebExtension.C4Controller
+Message：Action Name:Index,Controller Name:Home,System Error, StaffId:,StaffName:No current user
+System.ServiceModel.ProtocolException: The content type text/html of the response message does not match the content type of the binding (text/xml; charset=utf-8). If using a custom encoder, be sure that the IsContentTypeSupported method is implemented properly. The first 75 bytes of the response were: 'The page cannot be displayed because an internal server error has occurred.'. ---> System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at IC4MembershipService.CheckFunctionRight(FunctionCheck functionCheck)
+   at C4MembershipServiceClient.CheckFunctionRight(FunctionCheck functionCheck) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WcfClient\C4MembershipService.cs:line 203
+   at PwC.C4.Membership.Service.MembershipService.FunctionCheck(String area, String controller, String action, String url, List`1 roles) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\Service\MembershipService.cs:line 60
+   at PwC.C4.Membership.WebExtension.C4Controller.OnAuthorization(AuthorizationContext filterContext) in C:\Development\Projects\Base\PwC.C4\Core\PwC.C4.Membership\WebExtension\C4Controller.cs:line 74

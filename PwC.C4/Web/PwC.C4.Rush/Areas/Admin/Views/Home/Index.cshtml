@@ -1,0 +1,288 @@
+﻿
+@{
+    ViewBag.Title = "FormDesign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles
+{
+    <link href="~/Content/easyui.css" rel="stylesheet" />
+    <link href="~/Content/icon.css" rel="stylesheet" />
+
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/pwc.c4.rush.js"></script>
+    <script type="text/javascript">
+        function doSearch() {
+            $('#magazineGrid').datagrid('load', {
+                keyword: $('#formNameKey').val()
+            });
+        }
+
+        function openNewDialog(formId) {
+            var formWin = $('#formBaseInfo').window({
+                shadow: true,
+                modal: true,
+                closed: true,
+                minimizable: false,
+                maximizable: false,
+                collapsible: false
+            });
+            if (formId != undefined) {
+                $.get('@Url.Action("GetFormBaseInfo")?formId=' + formId, function(resp) {
+                    $("#Id").val(resp.Id);
+                    $("#FormName").val(resp.FormName);
+                    $("#ConnName").val(resp.ConnName);
+                    $("#EntityName").val(resp.EntityName);
+                    $("#AliasName").val(resp.AliasName);
+                    //$("#LinkTrackingConnName").val(resp.LinkTrackingConnName);
+                    $("#Layout").val(resp.Layout);
+                    $("input[name='Status'][value=" + resp.Status + "]").attr("checked", true);
+                    formWin.window('open');
+                });
+            } else {
+                $("#Id").val('');
+                $("#FormName").val('');
+                $("#ConnName").val('');
+                $("#EntityName").val('');
+                $("#AliasName").val('');
+                //$("#LinkTrackingConnName").val('');
+                $("#Layout").val('');
+                $("#Status").val(0);
+                formWin.window('open');
+            }
+
+        }
+
+        $(document).ready(function() {
+
+            $.get('@Url.Action("GetLayoutList")', function(resp) {
+                var item = $("select[name='Layout']");
+                item.html("");
+                $.each(resp, function(i, v) {
+                    item.append('<option value="' + v.Id + '">' + v.Name + '</option>');
+                });
+                item.selectedIndex = 0;
+            });
+
+            $("#saveFormBaseInfo").click(function() {
+                var btn = $(this);
+                btn.html("Loading").attr('disabled', true);
+                var form = $("#formBaeeInfo").serialize();
+                $.post('@Url.Action("SaveFormBaseInfo")', form, function(resp) {
+                    btn.html("Save").attr('disabled', false);
+                    $('#formBaseInfo').window('close');
+                    if (resp.isNew) {
+                        window.open('@Url.Action("FormDesign")?formId=' + resp.formId);
+                        return;
+                    } else {
+                        doSearch();
+                    }
+                });
+            });
+
+            $("#closeBtn").click(function() {
+                $('#formBaseInfo').window('close');
+            });
+
+            $("#deleteBtn").click(function() {
+                $.messager.confirm('Delete form', 'Are you confirm this?', function(r) {
+                    if (r) {
+                        $.post('@Url.Action("SaveFormBaseInfo")', { Id: $("#Id").val(), delete: true }, function(resp) {
+                            if (resp.Result) {
+                                $.messager.alert('Delete form', 'Form has been deleted!', 'info');
+                                $('#formBaseInfo').window('close');
+                                doSearch();
+                            } else {
+                                $.messager.alert('Delete form', 'System error!', 'error');
+                            }
+                        });
+                    }
+                });
+            });
+
+            $('#magazineGrid').datagrid({
+                url: '@Url.Action("GetFormList", "Home")',
+                method: 'POST',
+                idField: 'Id',
+                striped: true,
+                fitColumns: true,
+                singleSelect: true,
+                pagination: true,
+                nowrap: false,
+                toolbar: "#tb",
+                showFooter: true,
+                columns: [
+                    [
+                        {
+                            field: 'FormName',
+                            title: 'Form name',
+                            resizable: true,
+                            align: 'left',
+                            halign: 'center'
+                        },
+                        { field: 'AliasName', title: 'Alias name', resizable: true, align: 'left', halign: 'center' },
+                        { field: 'EntityName', title: 'Entity name', resizable: true, align: 'left', halign: 'center' },
+                        {
+                            field: 'VisitUrl',
+                            title: 'Visit url',
+                            resizable: true,
+                            align: 'left',
+                            halign: 'center',
+                            formatter: function(value, row, index) {
+                                var frontUrl = '@Url.Action("Index", "Default", new {area = "App", aliasName = "aliasName", dataId = "PreviewData"})';
+                                frontUrl = frontUrl.replace("aliasName", row.AliasName);
+                                frontUrl = frontUrl.replace("PreviewData", "{DataId}");
+                                return "http(s)://"+window.location.host + frontUrl;
+                            }
+                        },
+                        {
+                            field: 'ConnName',
+                            title: 'Connection name',
+                            resizable: true,
+                            align: 'left',
+                            halign: 'center'
+                        },
+                        // { field: 'LinkTrackingConnName', title: 'LinkTracking Connection Name', resizable: true, align: 'left', halign: 'center' },
+                        { field: 'LayoutName', title: 'Layout', resizable: true, align: 'left', halign: 'center' },
+                        { field: 'ModifyBy', title: 'Modify by', resizable: true, align: 'left', halign: 'center' },
+                        {
+                            field: 'ModifyTime',
+                            title: 'Modify time',
+                            resizable: true,
+                            align: 'left',
+                            halign: 'center',
+                            formatter: function(value, row, index) {
+                                return formatDatetime(value, "dd/MM hh:mm");
+                            }
+                        },
+                        {
+                            field: 'Status',
+                            title: 'Status',
+                            resizable: true,
+                            align: 'left',
+                            halign: 'center',
+                            formatter: function(value, row, index) {
+                                if (value === 0) {
+                                    return "Enable";
+                                }
+                                return "Disable";
+                            }
+                        },
+                        {
+                            field: 'Manage',
+                            title: 'Management',
+                            resizable: true,
+                            align: 'left',
+                            halign: 'center',
+                            formatter: function(value, row, index) {
+                                var edit = "<a href='javascript:void(0);' onclick='javascript:openNewDialog(\"" + row.Id + "\")' >Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                var design = "<a href='@Url.Action("FormDesign")?formId=" + row.Id + "' target='_blank'>Design</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                var frontUrl = '@Url.Action("Index", "Default", new {area = "App", aliasName = "aliasName", dataId = "PreviewData"})';
+                                frontUrl = frontUrl.replace("aliasName", row.AliasName);
+                                frontUrl = "<a href='" + frontUrl + "' target='_blank'>Front page</a>";
+                                return edit + design + frontUrl;
+                            }
+                        }
+                    ]
+                ],
+                onBeforeLoad: function(param) {
+                },
+                onLoadSuccess: function(data) {
+
+                },
+                onLoadError: function() {
+
+                },
+                onClickCell: function(rowIndex, field, value) {
+
+                }
+            });
+        });
+
+    </script>
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="height: 20px"></div>
+        <div class="col-md-12">
+
+            <div id="tb" style="padding: 7px">
+                <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:openNewDialog();">Add</a>
+                <div style="float: right">
+                    <input id="formNameKey" style="line-height: 23px; border: 1px solid #ccc; padding-left: 3px" placeholder=" Form name"/>
+                    <a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
+                </div>
+
+            </div>
+            <div id="magazineGrid">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="formBaseInfo" class="easyui-window" title="Form base information" closed="true" style="display: none; width: 420px;">
+    <form style="padding: 20px" class="form-horizontal" id="formBaeeInfo">
+        <div class="form-group">
+            <label for="FormName" class="col-sm-4 control-label">Form name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="FormName" name="FormName" placeholder="Form name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="AliasName" class="col-sm-4 control-label">Alias name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="AliasName" name="AliasName" placeholder="Alias name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="EntityName" class="col-sm-4 control-label">Entity name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="EntityName" name="EntityName" placeholder="Entity name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ConnName" class="col-sm-4 control-label">Connnection name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="ConnName" name="ConnName" placeholder="Connnection name">
+            </div>
+        </div>
+        @*<div class="form-group">
+            <label for="LinkTrackingConnName" class="col-sm-4 control-label">LinkTracking Connection Name</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="3"  id="LinkTrackingConnName" name="LinkTrackingConnName" placeholder="Connnection string"></textarea>
+            </div>
+        </div>*@
+        <div class="form-group">
+            <label for="Layout" class="col-sm-4 control-label">Layout</label>
+            <div class="col-sm-8">
+                <select name="Layout" id="Layout" class="form-control"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Form status</label>
+            <div class="col-sm-8">
+                <label class="radio-inline">
+                    <input type="radio" name="Status" value="0">Enable
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="Status" value="1">Disable
+</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12" style="text-align: right; margin-top: 15px">
+                <button type="button" id="saveFormBaseInfo" class="btn btn-success">Save</button>&nbsp;&nbsp;&nbsp;
+                <button type="button" id="closeBtn" class="btn btn-default">Close</button>&nbsp;&nbsp;&nbsp;
+                <button type="button" id="deleteBtn" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+        <input type="hidden" name="Id" id="Id" />
+    </form>
+</div>
+

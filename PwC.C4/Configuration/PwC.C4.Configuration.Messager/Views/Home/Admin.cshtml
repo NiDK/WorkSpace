@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <script>
+        $(function() {
+            $("#initConfig").click(function() {
+                BootstrapDialog.show({
+                    title: 'Danger!',
+                    message: 'This operation will initialize the database and reload the configuration file!',
+                    type: BootstrapDialog.TYPE_DANGER,
+                    buttons: [
+                        {
+                            label: 'Do it!',
+                            cssClass: 'btn-danger',
+                            autospin: true,
+                            action: function(dialogRef) {
+                                var $button = this;
+                                dialogRef.enableButtons(false);
+                                dialogRef.setClosable(false);
+                                $.post("@Url.Action("InitConfig")",
+                                    function(resp) {
+                                        dialogRef.getModalBody().html(resp.Message);
+                                        dialogRef.enableButtons(true);
+                                        dialogRef.setClosable(true);
+                                        $button.remove();
+                                        if (!resp.Result) {
+                                            dialogRef.setType(BootstrapDialog.TYPE_WARNING);
+                                        } else {
+                                            dialogRef.setType(BootstrapDialog.TYPE_SUCCESS);
+                                        }
+                                    });
+                            }
+                        }, {
+                            label: 'Close',
+                            action: function(dialogRef) {
+                                dialogRef.close();
+                            }
+                        }
+                    ]
+                });
+            });
+            $("#createConfig").click(function() {
+                BootstrapDialog.show({
+                    title: 'Create configuration',
+                    message: '<input type="text" class="form-control input-lg" id="ConfigName" placeholder="Configuration name" aria-describedby="helpBlock">' +
+                        '<span id="helpBlock" class="help-block">Input configuration name here,the configuration name must match the XmlRoot node.</span>' +
+                        '<input type="text" class="form-control" id="ConfigDesc" placeholder="Configuration description">',
+                    buttons: [
+                        {
+                            label: 'Save',
+                            action: function (dialogRef) {
+                                dialogRef.enableButtons(false);
+                                dialogRef.setClosable(false);
+                                var configName = dialogRef.getModalBody().find('#ConfigName').val();
+                                configName = $.trim(configName);
+                                var configDesc = dialogRef.getModalBody().find('#ConfigDesc').val();
+                                configDesc = $.trim(configDesc);
+                                $.post("@Url.Action("CreateConfigurationType")", { configName: configName, configDesc: configDesc }, function(resp) {
+                                    if (resp===1) {
+                                        dialogRef.close();
+                                        BootstrapDialog.alert('Create configuration type success!');
+                                    } else if (resp === -1) {
+                                        BootstrapDialog.alert('Configuration name has been existed!');
+                                    } else {
+                                        BootstrapDialog.alert('System error!');
+                                    }
+                                    dialogRef.setClosable(true);
+                                });
+                            }
+                        }, {
+                            label: 'Close',
+                            action: function(dialogRef) {
+                                dialogRef.close();
+                            }
+                        }
+                    ]
+                });
+            });
+        });
+    </script>
+}
+<h2>Admin</h2>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Conguration management</h3>
+    </div>
+    <div class="panel-body">
+        <button type="button" class="btn btn-success btn-lg btn-block" id="createConfig">Create Configuration</button>
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">System</h3>
+    </div>
+    <div class="panel-body">
+        <button type="button" class="btn btn-danger btn-lg btn-block" id="initConfig">Init Configuration</button>
+    </div>
+</div>

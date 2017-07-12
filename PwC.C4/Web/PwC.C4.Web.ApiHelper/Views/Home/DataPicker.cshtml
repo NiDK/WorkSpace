@@ -1,0 +1,912 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        PwC C4 API Helper
+    </title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/patch.css" rel="stylesheet" />
+    <link href="~/Content/docs.min.css" rel="stylesheet" />
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+    <link href="~/Content/hl-default.css" rel="stylesheet" />
+    <script src="~/Scripts/highlight.pack.js"></script>
+    <!--[if lt IE 9]><script src="~/Scripts/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/html5shiv.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+
+     <![endif]-->
+
+</head>
+<body>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../" class="navbar-brand">PwC C4 API Helper</a>
+            </div>
+            <nav id="bs-navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@Url.Action("DataPicker")">DataPicker</a>
+                    </li>
+                    <li><a href="@Url.Action("PeoplePicker")">PeoplePicker-Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+        <div class="container">
+            <h1>Data picker v0.1</h1>
+            <p>Staff and group selector or other datasource</p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+
+        <div class="row">
+            <div class="col-md-10" role="main">
+            <div class="bs-docs-section">
+                <h1 id="overview" class="page-header">概览</h1>
+
+                <p class="lead">该组件为PwC内部提供了可自定义数据源的通用数据选择器。</p>
+                <h2 id="overview-de">引用依赖</h2>
+                <p>该组件依赖于<code>Bootstrap v3</code>及版本以上，以及<code>Jquery1.10</code>以上版本。
+                </p>
+
+                <h2 id="overview-doctype">HTML5 文档类型</h2>
+                <p>该组件依赖于Bootstrap以及Jquery使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。在你项目中的每个页面都要参照下面的格式进行设置。</p>
+
+                <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+
+                <h2 id="overview-dir">组件目录结构</h2>
+                <pre><code class="html">DataPicker
+  └─ css
+  │   └─ datapicker.base.css
+  └─ images
+  │   └─ pp_icon.png
+  │   └─ pp_icon_light.png
+  └─ template
+  │   └─ people
+  │        └─ autocomplete.html
+  │        └─ displayItem.html         
+  │        └─ searchDialog.html
+  │        └─ searchItem.html
+  │        └─ styles.css          
+  └─ pwc.c4.datapicker.config.js
+  └─ pwc.c4.datapicker.js
+  └─ pwc.c4.datapicker.min.js
+</code></pre>
+
+            </div>
+
+
+                <div class="bs-docs-section">
+                    <h1 id="#ops" class="page-header">获取与部署</h1>
+                    <p class="lead">Datapicker可以通过CDN直接引用，或者通过Nuget下载最新包</p>
+                    <h2 id="ops-cdn">CDN</h2>
+                    <p>Dev:</p>
+                    <p>
+                        <code>http://cnpekappdwv031/PwC.C4.ApiHelper/Scripts/DataPicker/pwc.c4.datapicker.min.js</code><br/>
+                        <code>http://cnpekappdwv031/PwC.C4.ApiHelper/Scripts/DataPicker/pwc.c4.datapicker.config.js</code><br/>
+                        <code>http://cnpekappdwv031/PwC.C4.ApiHelper/Scripts/DataPicker/css/datapicker.base.css</code><br/>
+                        <code>http://cnpekappdwv031/PwC.C4.ApiHelper/Scripts/DataPicker/template/people/styles.css</code><br/>
+                    </p>
+                    <p>UAT:</p>
+                    <p>
+                        <code>http://hkappuwv685/PwC.C4.ApiHelper/Scripts/DataPicker/pwc.c4.datapicker.min.js</code><br/>
+                        <code>http://hkappuwv685/PwC.C4.ApiHelper/Scripts/DataPicker/pwc.c4.datapicker.config.js</code><br/>
+                        <code>http://hkappuwv685/PwC.C4.ApiHelper/Scripts/DataPicker/css/datapicker.base.css</code><br/>
+                        <code>http://hkappuwv685/PwC.C4.ApiHelper/Scripts/DataPicker/template/people/styles.css</code><br/>
+                    </p>
+                    <p>Prod:</p>
+                    <p>
+                        <code>http://hkapppwv173/PwC.C4.ApiHelper/Scripts/DataPicker/pwc.c4.datapicker.min.js</code><br />
+                        <code>http://hkapppwv173/PwC.C4.ApiHelper/Scripts/DataPicker/pwc.c4.datapicker.config.js</code><br />
+                        <code>http://hkapppwv173/PwC.C4.ApiHelper/Scripts/DataPicker/css/datapicker.base.css</code><br />
+                        <code>http://hkapppwv173/PwC.C4.ApiHelper/Scripts/DataPicker/template/people/styles.css</code><br />
+                    </p>
+                    <h2 id="ops-nuget">Nuget配置</h2>
+                    <p>Nuget setting中增加新的package source: <code>http://cnpekappdwv031/C4Reference/nuget</code></p>
+
+                    <h2 id="ops-get">代码获取与引用</h2>
+                    <p>
+                        选中需要添加引用的项目，Package Manager Console执行如下。
+                        <code>Install-Package PwC.C4.DataPicker-People</code>
+                    </p>
+                    <h2 id="ops-get1">直接下载</h2>
+                    <p>
+                       点击<a href="~/Files/DataPicker/DataPicker-last.zip">这里</a>下载完整包
+                    </p>
+                   
+                </div>
+
+            <div class="bs-docs-section">
+                    <h1 id="example" class="page-header">示例-People picker</h1>
+
+                    <p class="lead">请跳转至 @Html.ActionLink("PeoplePicker", "PeoplePicker") 查看示例详情</p>
+                </div>
+
+            <div class="bs-docs-section">
+                    <h1 id="grid" class="page-header">参数说明文档</h1>
+
+                    <p class="lead">下文中简单描述了对于该控件的基本调用方式与部署方式。如有其它疑问请@Chenhui Yu</p>
+
+                    <h2 id="grid-intro">页面所需要的引用</h2>
+                    <p>需要引用的样式表文件如下：</p>
+                    <pre><code class="html">&lt;link href="DataPicker/css/datapicker.base.css" rel="stylesheet"/&gt;
+&lt;link href="DataPicker/template/people/styles.css" rel="stylesheet"/&gt;
+</code></pre>
+                    <p>需要引用的脚本文件如下：</p>
+                    <pre><code class="html">&lt;script src="~/DataPicker/pwc.c4.datapicker.js"&gt;&lt;/script&gt;
+&lt;script src="~/DataPicker/pwc.c4.datapicker.config.js"&gt;&lt;/script&gt;
+</code></pre>
+
+                    <h2 id="grid-g-options">全局组件参数</h2>
+                    <p>通过下表可以详细查看Datapicker组件所包含的全局参数。全局参数配置在datapicker.config.js文件中，该配置文件决定了数据来源，数据结构，页面模板等基础配置。</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>参数名1</th>
+                                    <th>参数名2</th>
+                                    <th>参数名3</th>
+                                    <th>
+                                        类型
+                                    </th>
+                                    <th>
+                                        参数描述
+                                    </th>
+                                    <th>
+                                        示例数据
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>template</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>定义该数据类型的名称</td>
+                                    <td>"people"</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">cache_setting</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>缓存设定</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+
+                                    <td>enable</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>决定是否启用缓存</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+
+                                    <td>expiration</td>
+                                    <td></td>
+                                    <td>int</td>
+                                    <td>缓存过期时间，单位：秒</td>
+                                    <td>3000</td>
+                                </tr>
+                                <tr>
+                                    <td>cacheMethod</td>
+                                    <td></td>
+                                    <td>Storage</td>
+                                    <td>Html5 Storage变量，包含sessionStorage，以及localStorage</td>
+                                    <td>sessionStorage</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="7">ajax_setting</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>ajax相关设置</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>method_search</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据搜索请求方式</td>
+                                    <td>"post"</td>
+                                </tr>
+                                <tr>
+                                    <td>url_search</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据搜索API url</td>
+                                    <td>"http://server.com/api/values/search"</td>
+                                </tr>
+                                <tr>
+                                    <td>method_fetch</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据获取请求方式</td>
+                                    <td>"post"</td>
+                                </tr>
+                                <tr>
+                                    <td>url_fetch</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据获取API url</td>
+                                    <td>"http://server.com/api/values/fetch"</td>
+                                </tr>
+                                <tr>
+                                    <td>method_pic</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据图片请求方式</td>
+                                    <td>"post"</td>
+                                </tr>
+                                <tr>
+                                    <td>url_pic</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据图片API url</td>
+                                    <td>"http://server.com/api/values/pic"</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="6">display_item_setting</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>页面展示数据配置</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面上记录的key</td>
+                                    <td>"StaffId"</td>
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面上记录的显示数据</td>
+                                    <td>"StaffName"</td>
+                                </tr>
+                                <tr>
+                                    <td>icon_setting</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>图片resize的参数设置</td>
+                                    <td>"width=45&amp;height=45 &amp;quality=95&amp;format=jpg&amp;mode=crop"</td>
+                                </tr>
+                                <tr>
+                                    <td>properties</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>向后端请求的数据属性</td>
+                                    <td>"StaffName,StaffId,Type"</td>
+                                </tr>
+                                <tr>
+                                    <td>template</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面显示项的渲染模板文件名</td>
+                                    <td>"displayItem.html"</td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="13">autocomplete_setting</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>自动完成设置</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面上记录的key</td>
+                                    <td>"StaffId"</td>
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面上记录的显示数据</td>
+                                    <td>"StaffName"</td>
+                                </tr>
+                                <tr>
+                                    <td>queryProps</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>关键词查询的属性</td>
+                                    <td>"StaffName,StaffId,Email"</td>
+                                </tr>
+                                <tr>
+                                    <td>properties</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>向后端请求的数据属性</td>
+                                    <td>"StaffName,StaffId,Type"</td>
+                                </tr>
+                                <tr>
+                                    <td>template</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面显示项的渲染模板文件名</td>
+                                    <td>"autocomplete.html"</td>
+                                </tr>
+                                <tr>
+                                    <td>emptyAlert</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>当数据为空的时候提示信息，支持html</td>
+                                    <td>"&lt;li class='dpac-li'&gt; No staff data&lt;/li&gt;"</td>
+                                </tr>
+                                <tr>
+                                    <td>errorAlert</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>当系统异常时的提示信息，支持html</td>
+                                    <td>"&lt;li class='dpac-li'&gt; System error!&lt;/li&gt;"</td>
+                                </tr>
+                                <tr>
+                                    <td>loadingAlert</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据请求中的提示信息，支持html</td>
+                                    <td>"&lt;li class='dpac-li'&gt;&lt;span class="bootstrap-dialog-button-icon glyphicon glyphicon-asterisk icon-spin"&gt;&lt;/span&gt; Loading!&lt;/li&gt;"</td>
+                                </tr>
+                                <tr>
+                                    <td>keyUpDelayTime</td>
+                                    <td></td>
+                                    <td>int</td>
+                                    <td>数据延时请求时间，单位：毫秒</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">highlight</td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>关键字数据高亮设置</td>
+                                    <td></td>
+
+                                </tr>
+                                <tr>
+
+                                    <td>enable</td>
+                                    <td>bool</td>
+                                    <td>是否启用数据高亮</td>
+                                    <td>true</td>
+
+                                </tr>
+                                <tr>
+                                    <td>displayPropertiy</td>
+                                    <td>string</td>
+                                    <td>需要高亮的数据属性</td>
+                                    <td>"StaffName"</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="20">search_dialog_setting</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>搜索框设置</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>title</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>对话框标题</td>
+                                    <td>"People picker"</td>
+                                </tr>
+                                <tr>
+                                    <td>postion</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>对话框位置，可设置为：top,middle,bottom</td>
+                                    <td>"middle"</td>
+                                </tr>
+                                <tr>
+                                    <td>lazyloading</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>是否支持数据延时加载</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>closable</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>
+                                        When set to true, you can close the dialog by:
+                                        Clicking the close icon in dialog header.
+                                        Clicking outside the dialog.
+                                        ESC key.
+                                    </td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>draggable</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>搜索框是否可拖拽</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>closeByBackdrop</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>close dialog by outside the dialog.</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>closeByKeyboard</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>close dialog by ESC.</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>isShowDefaultList</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>当没有查询条件时，是否显示默认列表数据</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>enablePic</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>是否显示图片</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面上记录的key</td>
+                                    <td>"StaffId"</td>
+                                </tr>
+
+                                <tr>
+                                    <td>icon_setting</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>图片resize的参数设置</td>
+                                    <td>"width=45&amp;height=45 &amp;quality=95&amp;format=jpg&amp;mode=crop"</td>
+                                </tr>
+
+                                <tr>
+                                    <td>template</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>页面显示项的渲染模板文件名</td>
+                                    <td>"autocomplete.html"</td>
+                                </tr>
+                                <tr>
+                                    <td>emptyAlert</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>当数据为空的时候提示信息，支持html</td>
+                                    <td>"&lt;li class='dpac-li'&gt;No staff data&lt;/li&gt;"</td>
+                                </tr>
+                                <tr>
+                                    <td>errorAlert</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>当系统异常时的提示信息，支持html</td>
+                                    <td>"&lt;li class='dpac-li'&gt;System error!&lt;/li&gt;"</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">search_item</td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>搜索项设置</td>
+                                    <td></td>
+
+                                </tr>
+                                <tr>
+                                    <td>properties</td>
+                                    <td>string</td>
+                                    <td>向后端请求的数据属性</td>
+                                    <td>"StaffName,StaffId,Type"</td>
+                                </tr>
+                                <tr>
+
+                                    <td>template</td>
+                                    <td>string</td>
+                                    <td>搜索结果项模板</td>
+                                    <td>"searchItem.html"</td>
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>string</td>
+                                    <td>数据Key</td>
+                                    <td>"StaffId"</td>
+
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>string</td>
+                                    <td>显示项</td>
+                                    <td>"StaffName"</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h2 id="grid-options">初始化组件参数</h2>
+                    <p>通过下表可以详细查看Datapicker组件所包含的初始化参数。该参数可以在组件初始化时进行重写，例如数据选择上限，描述文字等。</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>参数名1</th>
+                                    <th>参数名2</th>
+                                    <th>数据类型</th>
+                                    <th>
+                                        参数描述
+                                    </th>
+                                    <th>
+                                        示例数据
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>width</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>Data picker 宽度，默认:200px</td>
+                                    <td>"200px"</td>
+                                </tr>
+                                <tr>
+                                    <td>height</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>Data picker 高度，默认:40px</td>
+                                    <td>"40px"</td>
+                                </tr>
+                                <tr>
+                                    <td>separator</td>
+                                    <td></td>
+                                    <td>string</td>
+                                    <td>数据分隔符，默认:,</td>
+                                    <td>","</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">autocomplete</td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>自动完成设置</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+
+                                    <td>enable</td>
+                                    <td>bool</td>
+                                    <td>是否启用自动完成，默认:true</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+
+                                    <td>autoFill</td>
+                                    <td>bool</td>
+                                    <td>当时据唯一的时候是否自动填充，默认:true</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+
+                                    <td>limit</td>
+                                    <td>int</td>
+                                    <td>自动联想的数据长度上限，默认:10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+
+                                    <td>inputbox</td>
+                                    <td>object</td>
+                                    <td>input框属性</td>
+                                    <td>{ minwidth: 200, maxwidth: 300 }</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">searchDialog</td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>搜索框设置</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+
+                                    <td>inputText</td>
+                                    <td>string</td>
+                                    <td>搜索框提示文字，默认:"Input key word here"</td>
+                                    <td>"Input key word here"</td>
+                                </tr>
+                                <tr>
+
+                                    <td>pageSize</td>
+                                    <td>in</td>
+                                    <td>每次获取列表数据的数量</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>maxCount</td>
+                                    <td></td>
+                                    <td>int</td>
+                                    <td>可选择的条目上限，默认为10,0为不限制</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>readOnly</td>
+                                    <td></td>
+                                    <td>bool</td>
+                                    <td>是否为只读状态，默认:false</td>
+                                    <td>false</td>
+                                </tr>
+                                <tr>
+                                    <td>para</td>
+                                    <td></td>
+                                    <td>object</td>
+                                    <td>向数据借口传递的设定数据，在People selector中，请设置该属性为{method:"all/staff/group"}，三种类型之一,分别对应为全部数据，仅限staff，仅限group。</td>
+                                    <td>{method:"all"}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h2 id="grid-callback">回调方法</h2>
+                    <p>Data picker组件中包含如下回调事件。</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>事件名称</th>
+                                    <th>
+                                        事件描述、触发机制
+                                    </th>
+                                    <th>
+                                        示例代码
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>displayOnClick</td>
+                                    <td>点击页面展示项时触发，返回数据项设定的key，value，以及当前Dom节点</td>
+                                    <td>displayOnClick：function(k,v,html){}</td>
+                                </tr>
+                                <tr>
+                                    <td>displayOnDeleted</td>
+                                    <td>删除页面展示项操作完成时触发，返回数据项设定的key，value，以及当前Dom节点</td>
+                                    <td>displayOnDeleted：function(k,v,html){}</td>
+                                </tr>
+                                <tr>
+                                    <td>displayOnDeleting</td>
+                                    <td>删除页面展示项前触发，返回数据项设定的key，value，以及当前Dom节点</td>
+                                    <td>displayOnDeleting：function(k,v,html){}</td>
+                                </tr>
+                                <tr>
+                                    <td>acItemOnClick</td>
+                                    <td>点击自动联想下拉项时触发，返回数据项设定的key，value，以及当前Dom节点</td>
+                                    <td>acItemOnClick：function(k,v,html){}</td>
+                                </tr>
+                                <tr>
+                                    <td>acItemCompleted</td>
+                                    <td>自动联想完成时触发，返回数据项设定的key，value，以及当前Dom节点</td>
+                                    <td>acItemCompleted：function(k,v,html){}</td>
+                                </tr>
+                                <tr>
+                                    <td>dialogSave</td>
+                                    <td>保存搜索结果时触发，返回当前选择项的key数组</td>
+                                    <td>dialogSave：function(keys){}</td>
+                                </tr>
+                                <tr>
+                                    <td>dialogOpen</td>
+                                    <td>弹出搜索框时触发，返回当前已选择的数据key数组</td>
+                                    <td>dialogOpen：function(keys){}</td>
+                                </tr>
+                                <tr>
+                                    <td>dialogClose</td>
+                                    <td>关闭搜索框时触发，无返回值</td>
+                                    <td>dialogClose：function(){}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="grid-func">外部方法</h2>
+                    <p>初始化Data picker组件是可得到datapicker对象，该对象支持如下方法，可在业务需要时随时调用。</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>方法名称</th>
+                                    <th>
+                                        方法描述
+                                    </th>
+                                    <th>
+                                        入口参数
+                                    </th>
+                                    <th>
+                                        返回值
+                                    </th>
+                                    <th>
+                                        示例代码
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>getValue</td>
+                                    <td>获取当前控件的数据key的数组，或当前控件中数据设定的数据属性的数组</td>
+                                    <td>无</td>
+                                    <td>["key1","key2","key3"]/[{data1},{data2},{data3}]</td>
+                                    <td>item.getValue()</td>
+                                </tr>
+                                <tr>
+                                    <td>setValue</td>
+                                    <td>传入设定的数据key，控件中会追加指定的数据，如果数据已存在或者超出存放上限，则不会追加。</td>
+                                    <td>数据key的数组，示例：[key1,key2,key3]</td>
+                                    <td>无</td>
+                                    <td>item.setValue([key1,key2,key3])</td>
+                                </tr>
+                                <tr>
+                                    <td>changeValue</td>
+                                    <td>传入设定的数据key，控件中会替换指定的数据，如果数据已存在或者超出存放上限，则只会替换符合要求的数据。</td>
+                                    <td>数据key的数组，示例：[key1,key2,key3]</td>
+                                    <td>无</td>
+                                    <td>item.changeValue([key1,key2,key3])</td>
+                                </tr>
+                                <tr>
+                                    <td>setReadOnly</td>
+                                    <td>传入设定的数据key，控件中会替换指定的数据，如果数据已存在或者超出存放上限，则只会替换符合要求的数据。</td>
+                                    <td>bool类型，当为true时则为只读状态，反之亦然，示例：true</td>
+                                    <td>无</td>
+                                    <td>item.setReadOnly(true)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="grid-media-queries">组件初始化</h2>
+                    <p>
+                        该组件依赖于<kbd>input</kbd>控件，示例中的<code>#test1</code>即为<kbd>input</kbd>控件的Id
+                    </p>
+                    <pre><code class="html">&lt;script type="text/javascript"&gt;
+    $(document).ready(function() {
+            $('#test1').datapicker("people",
+                        para: { "method": "all" }
+                    }
+            );
+        });
+&lt;/script&gt;
+</code></pre>
+                </div>
+
+ 
+
+                    <div class="bs-docs-section">
+                        <h1 id="ops" class="page-header">扩展开发文档(未完成)</h1>
+                        <p class="lead">本段内容描述了如果创建一个数据源，通过该控件对数据源进行查询、获取、渲染等操作</p>
+                        <h2 id="dev-datasource">数据源接口规范</h2>
+                        <p>1.数据渲染接口</p>
+
+                        <p>2.数据搜索接口</p>
+                        <p>3.数据图片示例接口</p>
+                        <h2 id="dev-temp">页面模板规范</h2>
+                        <p>1.autocomplete</p>
+                        <p>2.displayItem</p>
+                        <p>3.searchDialog</p>
+                        <p>4.searchItem</p>
+                        <p>5.styles.css</p>
+
+                    </div>
+
+
+                </div>
+
+            <div class="col-md-2" role="complementary">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="nav bs-docs-sidenav">
+
+                        <li>
+                            <a href="#overview">概览</a>
+                            <ul class="nav">
+                                <li><a href="#overview-de">引用依赖</a></li>
+                                <li><a href="#overview-doctype">HTML5 文档类型</a></li>
+                                <li><a href="#overview-dir">组件目录结构</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#ops">获取与部署</a>
+                            <ul class="nav">
+                                <li><a href="#ops-cdn">CDN</a></li>
+                                <li><a href="#ops-nuget">Nuget配置</a></li>
+                                <li><a href="#ops-get">代码获取与引用</a></li>
+                                <li><a href="#ops-get1">直接下载</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#example">示例-People picker</a>
+                        </li>
+
+                        <li>
+                            <a href="#grid">参数说明文档</a>
+                            <ul class="nav">
+                                <li><a href="#grid-intro">页面所需要的引用</a></li>
+                                <li><a href="#grid-g-options">全局组件参数</a></li>
+                                <li><a href="#grid-options">初始化组件参数</a></li>
+                                <li><a href="#grid-callback">回调函数</a></li>
+                                <li><a href="#grid-func">外部方法</a></li>
+                                <li><a href="#grid-media-queries">组件初始化</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#dev">扩展开发文档</a>
+                            <ul class="nav">
+                                <li><a href="#dev-datasource">数据源接口规范</a></li>
+                                <li><a href="#dev-temp">页面模板规范</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <a class="back-to-top" href="#top">
+                        返回顶部
+                    </a>
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+            <p>© 2016 PwC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/docs.min.js"></script>
+    <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>

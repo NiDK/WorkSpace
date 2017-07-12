@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="section">
+<div id="wrap">
+    <ul>
+        <li class="li1">
+            <div class="result">
+
+                <div class="edit_button">
+                    <a href="#" target="_self" title="Add" class="hide_button"><img src="~/Content/Images/icons-delete.png" alt="" title=""></a>
+                    <a href="#" target="_self" title="Delete" class="hide_button"><img src="~/Content/Images/icons-add.png" alt="" title=""></a>
+                </div>
+            </div>
+            @Html.Action("Category", "Home")
+        </li>
+    </ul>
+</div>
+    </div>
